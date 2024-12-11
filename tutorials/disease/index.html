@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+
+    <title>Creating a sickness propagation simulation</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Creating a sickness propagation simulation</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="disease">
+	 <div class="container">
+	  <h4>Creating a sickness propagation simulation</h4>
+	  
+	  <p> This tutorial will show how to create a sickness propagation simulation to help
+	  understand the ABStractme tool features.</p>
+	  
+	  <p> First create a new project and a new diagram, detailed instructions on the link: <a href="../../basic/index.html">Creating the first project</a>.</p>
+	  
+	  <p> Open the diagram created, click on the <a href="../features/concerns/index.html#overview">overview</a> box. At the properties view, select the "Spatial Abstraction" tab and change the fields "Max Col"
+	  and "Max Row" to 49. The grid will change to 50 x 50. </p>
+	  
+	  <p> The resulting properties view will look like <a href="#disease-spatial">Fig. 1</a>. </p>
+
+	  <figure id="disease-spatial">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_spatial.png" alt="Overview properties.">
+		<figcaption class="figure-caption text-center">Fig. 1. Overview properties.</figcaption>
+	  </figure>
+
+
+	  <p> Now select the <a href="../features/concerns/index.html#concern">concern</a> line on 
+	  the <a href="../features/concerns/index.html#palette">palette</a> and click on the overview rectangle.</p>	 
+	  
+	  <p> A concern will be added to the overview along with its corresponding tab. Select the concern tab that appeared after the 
+	  creation of the concern, a new window will appear with the concern diagram. </p>
+	  
+	  <p> Add an <a href="../features/entities/index.html#agent">agent</a> to the concern. Select an agent to add, by clicking on the agent line
+	  on the palette and clicking anywhere on the concern diagram. </p>
+	  
+	  <p> The agent box will appear on the diagram. Select the box. On the "Basic" properties view, the name of the agent can be set, in our case, its name will 
+	  be "Human". </p>
+	  
+	  <p> Change to the "<a href="../features/entities/index.html#creational">Creation Strategy</a>" tab, change the field "Strategy" to "GIS File". </p>
+	  
+	  <p> Select a gis file to define how many and where the agents will be created, click
+	  on the folder button. A window to select the file will be opened. 
+	  The file is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/population-1000.asc">Download link</a></p>
+	  
+	  <p> The resulting agent will look like <a href="#agent">Fig. 2</a>. </p>
+	  
+	  <figure id="agent">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_agent.png" alt="The created agent.">
+		<figcaption class="figure-caption text-center">Fig. 2. The created agent.</figcaption>
+	  </figure>
+	  
+	  <p> Now let's add the <a href="../features/capabilities/index.html#mobility">capability of movement</a> to the agents. </p>	
+	  
+	  <p> Select an mobility to add, by clicking on the Mobility > "Random Walk" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> A new box will be added to the diagram, notice that it is connected to the agent. </p>	
+	  
+	  <p> Now let's allow the agents to move to the limits of their field of vision on each step of the simulation. </p>	
+	  
+	  <p> To do this, on the properties view that appeared, "Range" rectangle, check the "Limited" dot and on the "Upper" 
+	  field set the value to 5. </p>	
+	  
+	  <p> The resulting box and properties view will look like <a href="#mobility-random">Fig. 3</a>.</p>		 
+	  
+	  <figure id="mobility-random">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_random_walk.png" alt="Setting the agents mobility.">
+		<figcaption class="figure-caption text-center">Fig. 3. Setting the agents mobility.</figcaption>
+	  </figure> 
+
+	  <p> Now let's add the <a href="../features/capabilities/index.html#diseases">disease</a> capability to allow the agents to get infected by the disease. 
+	  Select a disease to add, by clicking on the Diseases > "Disease Model" line
+	  on the palette and clicking on the agent box. </p>		
+	  
+	  <p> Select the disease box created. On the "Basic" properties view that appeared, change the disease name to "flu" and the
+	  "Compartments" combo box to "SIR". </p>
+	  
+	  <p> The resulting disease box and basic properties will look like <a href="#disease-basic">Fig. 4</a>.</p>	
+	  	  
+	  <figure id="disease-basic">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_basic.png" alt="The disease box and basic properties.">
+		<figcaption class="figure-caption text-center">Fig. 4. The disease box and basic properties.</figcaption>
+	  </figure>
+	 
+	  <p> Change to the "Transmission" tab. 
+	  Click on the "+" button to add a form of transmission to the disease.</p>
+	  
+	  <p> On the field "Susceptible Agent" select the created agent's name. </p>
+	  <p> On the field "Infectious Element" select the created agent's name again. </p>
+	  <p> On the field "Compartment" select the "I" compartment, 
+	  the agents that can transmit the disease to others are the infected ones. </p>
+	  
+	  <p> Set the field "Transmission Type" to CONTACT and the field "Transmission Probability" to 0.3. 
+	  The probability of transmission on contact will be 30%.</p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> Select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Transmission" tab will look like <a href="#disease-trasmission">Fig. 5</a>.</p>	
+	   
+	  <figure id="disease-trasmission">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_transmission.png" alt="Disease transmission properties.">
+		<figcaption class="figure-caption text-center">Fig. 5. Disease transmission properties.</figcaption>
+	  </figure>
+	  	  
+	  <p> Change to the "Progression" tab. 
+	  Click on the "+" button to add a disease progression to the agents.</p>	   
+	  
+	  <p> On the field "Subject Agent" select the created agent's name. </p>
+	  <p> On the field "Subject Compartment" select the "I" compartment. </p>
+	  <p> On the field "Next Compartment" mark "Use Default?". </p>
+	  
+	  <p> Set the field "Duration Type" to DETERMINISTIC and the "Time unit(s)" to after 10. 
+	  The infected agents will be recovered from the disease after 10 time units.</p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> Select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Progression" tab will look like <a href="#disease-progression">Fig. 6</a>.</p>	
+  	  
+	  <figure id="disease-progression">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_progression.png" alt="Disease progression properties.">
+		<figcaption class="figure-caption text-center">Fig. 6. Disease progression properties.</figcaption>
+	  </figure>
+	  
+	  <p> Now let's add a capability to the agent to be susceptible to the disease again after a
+	  certain amount of time. On the "Progression" tab. 
+	  Click on the "+" button to add another disease progression to the agents.</p>	   
+	  
+	  <p> On the field "Subject Agent" select the created agent's name. </p>
+	  <p> On the field "Subject Compartment" select the "R" compartment. </p>
+	  <p> On the field "Next Compartment" mark "Use Default?". </p>
+	  
+	  <p> Set the field "Duration Type" to DETERMINISTIC and the "Time unit(s)" to after 30. 
+	  The recovered agents will be susceptible to the disease again after 30 time units.</p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> Select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Progression" tab will look like <a href="#disease-progression2">Fig. 7</a>.</p>	
+  	  
+	  <figure id="disease-progression2">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_progression2.png" alt="Disease progression properties updated.">
+		<figcaption class="figure-caption text-center">Fig. 7. Disease progression properties updated.</figcaption>
+	  </figure>
+	  
+	  <p> Change to the "Mortality" tab. 
+	  Click on the "+" button to add a probability of death caused by the disease.</p>	   
+	  
+	  <p> On the field "Subject Agent" select the created agent's name. </p>
+	  <p> On the field "Subject Compartment" select the "I" compartment. </p>
+	  <p> On the field "Death rate" set the value to 0.25. The probability of death will be 25%. </p>
+	  
+	  <p> Set the field "Mortality Type" to WHEN_LEAVING_COMPARTMENT. 
+	  The infected agents might die at the moment they were supposed to change their compartment to recovered.</p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> Select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Mortality" tab will look like <a href="#disease-mortality">Fig. 8</a>.</p>	
+  	  
+	  <figure id="disease-mortality">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_mortality.png" alt="Disease mortality properties.">
+		<figcaption class="figure-caption text-center">Fig. 8. Disease mortality properties.</figcaption>
+	  </figure>
+	  
+	  <p> Change to the "Introduction" tab. On the "Infection Instructions" rectangle, select the first row,
+	  Click on the pencil button to choose a few agents to be infected when the simulation begins.</p>	   
+	  
+	  <p> On the "Introduction Details" rectangle, field "Quantity" select DETERMINISTIC and set the
+	  number of agents to 10. 10 agents to be infected when the simulation begins. </p>
+
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> Select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Introduction" tab will look like <a href="#disease-introduction">Fig. 9</a>.</p>	
+
+	  <figure id="disease-introduction">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_mortality.png" alt="Disease introduction properties.">
+		<figcaption class="figure-caption text-center">Fig. 9. Disease introduction properties.</figcaption>
+	  </figure>  
+	  
+	  <p> Now let's add colors to help differentiate infected and recovered agents from each other.
+	  To do this, import another file. </p>
+	  
+	  <p> Select an existing NetLogo capability to add, by clicking on the <a href="../features/other/index.html#external">External</a> > "Existing NetLogo Capability" line
+	  on the palette and clicking on the agent box.</p>
+
+	  <p> A window where to select the file will be opened. 
+	  The file is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/color-agent-by-compartment-mdd4abms.nls">Download link</a></p>
+	  
+	  <p> The resulting agent will look like <a href="#agent-color">Fig. 10</a>. </p>
+	  
+	  <figure id="agent-color">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_color_agent.png" alt="The agent colored by compartment.">
+		<figcaption class="figure-caption text-center">Fig. 10. The agent colored by compartment.</figcaption>
+	  </figure>
+	  
+	  <p> Now let's add a graphic to monitor the quantity of the 
+	  agents according to each compartment at each step of the simulation.</p>	
+	  
+	  <p> To add the graphic, select one to add, by clicking on the <a href="../features/other/index.html#output">Output</a> > "Output Dataset" line 
+	  on the palette and clicking anywhere on the diagram.</p>
+	  
+	  <p> Select the box created. On the properties view that appeared, focus on the left column.</p>	
+	  
+	  <p> Choose a name to give to the graphic on the "Name" field. Inside the output rectangle, 
+	  click on the "+" button.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the line to be added to the graphic.
+	  Let's call the first line "susceptible". </p>	
+	  
+	  <p> Also, choose the entity related to the defined line. On the "Entity" field select the agent 
+	  created previously. </p>	
+	  
+	  <p> On the "Criterion" field select "Eligible" and choose the compartment "S". Leave everything else unchanged. </p>	
+	   
+	  <p> Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> Repeat the process above for the "I" and "R" compartments, by adding each with the "+" button.</p>
+	  
+	  <p> Select any line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Output" properties will look like <a href="#disease-output">Fig. 11</a>.</p>
+	  		 
+	  <figure id="disease-output">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_output.png" alt="Adding a graphic to monitor agents by compartment.">
+		<figcaption class="figure-caption text-center">Fig. 11. Adding a graphic to monitor agents by compartment.</figcaption>
+	  </figure> 
+	  
+	  <p> <a href="#complete">Fig. 12</a> shows what the entire concern diagram will look like after the changes made in this tutorial.</p>		 
+	  	 
+	  <figure id="complete">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_complete.png" alt="Overview of the simulation after the changes.">
+		<figcaption class="figure-caption text-center">Fig. 12. Overview of the simulation after the changes.</figcaption>
+	  </figure> 	  
+	  
+	  <p> Export and run the simulation on NetLogo, detailed instructions on the link: <a href="../basic/index.html#exporting-netlogo">Exporting the Project to NetLogo</a>.</p>	
+	  
+	  <p> The simulation will look like <a href="#netlogo">Fig. 13</a>.</p>	
+	  	 
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../figs/disease_netlogo.png" alt="The simulation running on NetLogo.">
+		<figcaption class="figure-caption text-center">Fig. 13. The simulation running on NetLogo.</figcaption>
+	  </figure> 
+	  
+	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/disease.zip">Download link</a></p>
+ 	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

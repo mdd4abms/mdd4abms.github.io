@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+
+    <title>Creating the Sugarscape simulation</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Creating the Sugarscape Simulation</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Sugarscape Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="installation">
+	 <div class="container">
+	  <h4>Creating a basic version of the Sugarscape simulation</h4>
+	  
+	  <p> This tutorial will show you how to create an initial version of the sugarscape simulation to help
+	  understand the ABStractme tool features.</p>
+	  
+	  <p> First create a new project and a new diagram, detailed instructions on the link: <a href="../../basic/index.html">Creating the first project</a>.</p>
+	  
+	  <p> Open the diagram created, click on the overview box. At the properties view, select the "Spatial Abstraction" tab and change the fields "Max Col"
+	  and "Max Row" to 49. The grid will change to 50 x 50. </p>
+	  
+	  <p> We must not allow two or more agents to occupy the same space in the case of this simulation. </p>
+	  
+	  <p> To change this, in the same view, on the "Spatial Unit Entity" rectangle, "Occupation" field,  select "One Entity". </p>
+	  
+	  <p> The resulting properties view will look like <a href="#basic-overview">Fig. 1</a>. </p>
+
+	  <figure id="basic-overview">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_overview.png" alt="Overview properties.">
+		<figcaption class="figure-caption text-center">Fig. 1. Overview properties.</figcaption>
+	  </figure>
+
+
+	  <p> Now select the concern line on the palette and click on the overview rectangle.</p>	 
+	  
+	  <p> A concern will be added to the overview along with its corresponding tab. Select the concern tab that appeared after the 
+	  creation of the concern, a new window will appear with the concern diagram. </p>
+	  
+	  <p> Now we must add an agent to the concern. Select an agent to add, by clicking on the agent line
+	  on the palette and clicking anywhere on the concern diagram. </p>
+	  
+	  <p> The agent box will appear on the diagram. Select the box. On the "Basic" properties view, you can name the agent, in our case, its name will 
+	  be "Automaton". </p>
+	  
+	  <p> Change to the "Creation Strategy" tab, change the field "Strategy" to "Designer Defined". </p>
+	  
+	  <p> The simulation will start with 100 agents, on the line that begins with "Quantity", set the "Value" field to 100. The resulting
+	  agent will look like <a href="#agent">Fig. 2</a>. </p>
+	  
+	  <figure id="agent">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_agent1.png" alt="The created agent.">
+		<figcaption class="figure-caption text-center">Fig. 2. The created agent.</figcaption>
+	  </figure>
+	  
+	  <p> Now we need to add an attribute to represent the agent's field of vision. Select an attribute to add, by clicking on the attribute line
+	  on the palette and clicking on the agent box. </p>		
+	  
+	  <p> You can select the attribute created. On the "Basic" properties view that appeared, change the attribute name to "vision", and its
+	  type to "INTEGER". </p>
+	  
+	  <p> The resulting attribute will look like <a href="#vision-1">Fig. 3</a>.</p>	
+	  	  
+	  <figure id="vision-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_vision1.png" alt="The vision attribute.">
+		<figcaption class="figure-caption text-center">Fig. 3. The vision attribute.</figcaption>
+	  </figure>
+	 
+	  <p> Change to the "Initialization" tab. On the field "Source" select "Expression". Set the field "Expression" that appeared to 5. The 
+	  resulting "Initialization" tab will look like <a href="#vision-2">Fig. 4</a>.</p>	
+	   
+	  <figure id="vision-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_vision2.png" alt="Vision attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 4. Vision attribute initialization.</figcaption>
+	  </figure>
+	  
+  	  <p> Now we need to add another attribute to represent the agent's metabolism. Follow the same steps as before, but the name of 
+  	  the attribute will be "sugarMetabolism". </p>
+  	  
+  	  <p> The resulting attribute will look like <a href="#metabolism-1">Fig. 5</a>.</p>
+  	  
+	  <figure id="metabolism-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_metabolism1.png" alt="The metabolism attribute.">
+		<figcaption class="figure-caption text-center">Fig. 5. The metabolism attribute.</figcaption>
+	  </figure>
+	  
+	  <p> Change to the "Initialization" tab. On the field "Source" select "Expression". Set the field "Expression" that appeared to 1. </p>	
+	  
+	  <p> The resulting "Initialization" tab will look like <a href="#metabolism-2">Fig. 6</a>.</p>	
+	  	 
+	  <figure id="metabolism-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_metabolism2.png" alt="Metabolism attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 6. Metabolism attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> Now we must add the capability of movement to the agents. </p>	
+	  
+	  <p> Select an mobility to add, by clicking on the Mobility > "Random Walk" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> A new box will be added to the diagram, notice that it is connected to the agent. </p>	
+	  
+	  <p> The resulting box will look like <a href="#mobility-random-1">Fig. 7</a>.</p>		 
+	  
+	  <figure id="mobility-random-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_mobilityRandom1.png" alt="Setting the agents mobility.">
+		<figcaption class="figure-caption text-center">Fig. 7. Setting the agents mobility.</figcaption>
+	  </figure> 
+
+	  <p> We must allow the agents to move to the limits of their field of vision at each step of the simulation. </p>	
+	  
+	  <p> To do this, on the properties view that appeared, "Range" rectangle, check the "Limited" dot and on the "Upper" 
+	  field select the "vision" attribute previously created. </p>	
+	  
+	  <p> The resulting properties view will look like <a href="#mobility-random-2">Fig. 8</a>.</p>		
+	   
+	  <figure id="mobility-random-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_mobilityRandom2.png" alt="Setting the agents mobility.">
+		<figcaption class="figure-caption text-center">Fig. 8. Setting the agents mobility.</figcaption>
+	  </figure> 
+	  
+	  <p> Now we can export and run the simulation on NetLogo, detailed instructions on the link: <a href="../../basic/index.html#exporting-netlogo">Exporting the Project to NetLogo</a>.</p>	
+	  
+	  <p> The simulation will look like <a href="#netlogo">Fig. 9</a>.</p>	
+	  	 
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_basic_netlogo.png" alt="The simulation running on NetLogo.">
+		<figcaption class="figure-caption text-center">Fig. 9. The simulation running on NetLogo.</figcaption>
+	  </figure> 
+	  
+	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../../downloads/sugarscapeV1.zip">Download link</a></p>
+ 	  
+	  <p> Notice that the metabolism attribute was not used, it will be used on the second part of this tutorial, which will
+	  include the creation of the sugar to be harvested by the agents: <a href="../energy/index.html">Adding energy to the agents</a>.</p>		 
+	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

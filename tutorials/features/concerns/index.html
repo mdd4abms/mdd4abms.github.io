@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-120620574-1');
+		</script>
+		  
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<link href="css/customization.css" rel="stylesheet">
+		
+	    <title>Overview and Concerns</title>
+	    
+	</head>
+
+	<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Overview and Concerns</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Features)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+
+	
+	<section id="concerns">
+	 <div class="container">
+	 	<h4 id="overview">Overview</h4>
+	 	
+		<p> The overview diagram points out the purpose of the simulation and
+		any other essential information to provide a broad picture
+		of the simulation being modeled. </p>
+		
+		<p> It is composed of the 
+		simulation title and description, and its concerns. A diamond
+		represents each concern, with its description beside it. </p>
+		
+		<p> If there is more than one concern, they are shown as a stack
+		to emphasize that they represent the decomposition of the
+		simulation into conceptual layers. </p>
+		
+		<p> The bottom layer represents the spatial abstraction of the environment in
+		which there are situated entities. </p>
+		
+		<p> <a href="#overview-basic">Fig. 1</a> shows the overview diagram with the properties view where the diagram title and description
+		can be set.</p>
+
+		<figure id="overview-basic"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_basic.png" alt="Overview basic properties.">
+			<figcaption class="figure-caption text-center">Fig. 1. Overview basic properties.</figcaption>
+	  	</figure>
+	  	
+	  	<p> To specify the environment in which all other situated entities are
+		located, the ABStracme tool uses the spatial abstraction. Spatial Abstraction is the ground of the
+		simulation and is discretized in spatial units. A Spatial Unit is a particular
+		type of entity in which other objects of the environment can be situated.</p>
+	  	
+	  	<p> There are three types of spatial abstractions, each of them
+		with its particular spatial unit: </p>
+		
+		<p> i) A grid composed of cells(GridCell), as shown in <a href="#overview-grid">Fig. 2</a> 
+		and <a href="#overview-grid-box">Fig. 3</a>. </p>
+	  		 	
+		<figure id="overview-grid"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_grid.png" alt="Overview Grid.">
+			<figcaption class="figure-caption text-center">Fig. 2. Overview Grid.</figcaption>
+	  	</figure>
+
+		<figure id="overview-grid-box"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_grid_box.png" alt="Overview grid box.">
+			<figcaption class="figure-caption text-center">Fig. 3. Overview grid box.</figcaption>
+	  	</figure>
+	  	
+	  	<p> ii) Cartesian Space composed of points (Cartesian2DPoint), as shown in 
+	  	<a href="#overview-cartesian">Fig. 4</a> 
+		and <a href="#overview-cartesian-box">Fig. 5</a>. </p>
+	  		 	
+		<figure id="overview-cartesian"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_cartesian.png" alt="Overview cartesian.">
+			<figcaption class="figure-caption text-center">Fig. 4. Overview cartesian.</figcaption>
+	  	</figure>
+
+		<figure id="overview-cartesian-box"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_cartesian_box.png" alt="Overview cartesian box.">
+			<figcaption class="figure-caption text-center">Fig. 5. Overview cartesian box.</figcaption>
+	  	</figure>
+	  	
+	  	<p> iii) Graph composed of links and edges (GraphLink and GraphEdge), as shown in 
+	  	<a href="#overview-graph">Fig. 6</a> 
+		and <a href="#overview-graph-box">Fig. 7</a>.</p>
+
+		<figure id="overview-graph"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_graph.png" alt="Overview graph.">
+			<figcaption class="figure-caption text-center">Fig. 6. Overview graph.</figcaption>
+	  	</figure>
+
+		<figure id="overview-graph-box"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview_graph_box.png" alt="Overview graph box.">
+			<figcaption class="figure-caption text-center">Fig. 7. Overview graph box.</figcaption>
+	  	</figure>
+	  		 	
+	 	
+		<h4 id="palette">Palette</h4>
+		
+		<p> The palette is where all the elements of the model can be chosen to be set on the diagram. </p>
+		
+		<p> The overview of the palette is shown in <a href="#palette-overview">Fig. 8</a>.</p>
+		
+		<figure id="palette-overview"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_overview.png" alt="Palette Overview.">
+			<figcaption class="figure-caption text-center">Fig. 8. Palette Overview.</figcaption>
+	  	</figure>
+	  
+		<h4 id="concern">Concerns</h4>
+		
+		<p> Concerns are seen as a decomposition of a concept of the model. They represent a decomposition
+		of the base concern, the spatial abstraction. </p>
+		
+		<p> <a href="#concerns">Fig. 9</a> shows all the objects related to the concerns that can 
+		be managed on the ABStractme Tool.</p>	 	
+		
+		<figure id="concerns"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_concerns.png" alt="Concerns.">
+			<figcaption class="figure-caption text-center">Fig. 9. Concerns.</figcaption>
+	  	</figure>		
+
+		<p> <a href="#concerns-concern">Fig. 10</a> shows how the concerns appear on the overview diagram, as 
+		a decomposition of the spatial abstraction.</p>			
+
+		<figure id="concerns-concern"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_concern.png" alt="The concern.">
+			<figcaption class="figure-caption text-center">Fig. 10. The concern.</figcaption>
+	  	</figure>	  
+		
+		<p> Each concern is described in a separate diagram. </p>
+		
+		<p> Each concern has a title and description and can be composed of parameters and entities, which are not
+		shared with other concerns by default.</p>
+	  	
+	  	<p> The parameters are values that define an experimentation scenario. </p>
+	  	
+		<p> <a href="#concerns-parameter">Fig. 11</a> shows the box that represents the parameters on the diagram. </p>	  		  	
+	  	
+		<figure id="concerns-parameter"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_parameter.png" alt="The parameter.">
+			<figcaption class="figure-caption text-center">Fig. 11. The Parameter.</figcaption>
+	  	</figure>
+	  	
+		<p> <a href="#concerns-parameter-basic">Fig. 12</a> shows how to define the parameter name and type in the properties, the cardinality
+		cannot be changed in the case of parameters. </p>	  		  	
+	  	
+		<figure id="concerns-parameter-basic"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_parameter_p_basic.png" alt="The parameter properties.">
+			<figcaption class="figure-caption text-center">Fig. 12. The Parameter properties.</figcaption>
+	  	</figure>
+	  	
+	  	<p> <a href="#concerns-parameter-init">Fig. 13</a> shows the initial value properties section of the parameters,
+	  	unlike attributes, the update section of parameters cannot be set. </p>	  		  	
+	  	
+		<figure id="concerns-parameter-init"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_parameter_p_init.png" alt="The parameter initialization.">
+			<figcaption class="figure-caption text-center">Fig. 13. The parameter initialization.</figcaption>
+	  	</figure>		
+
+		<p> Hints are used to show any information that might be useful to document the simulation model.</p> 
+
+		<p> <a href="#concerns-hint">Fig. 14</a> shows the box that represents the hints on the diagram. </p>	  		  	
+
+		<figure id="concerns-hint"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_hint.png" alt="Hint.">
+			<figcaption class="figure-caption text-center">Fig. 14. Hint.</figcaption>
+	  	</figure>	
+	  	
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

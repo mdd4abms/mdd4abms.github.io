@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		
+		  gtag('config', 'UA-120620574-1');
+		</script>
+		  
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+		<link href="css/customization.css" rel="stylesheet">
+		
+		<style media="screen" type="text/css">
+		
+		.sidenav {
+		    height: 100%;
+		    width: 120px;
+		    position: fixed;
+		    z-index: 1;
+		    top: 0;
+		    left: 0;
+		    background-color: #111;
+		    overflow-x: hidden;
+		    padding-top: 20px;
+		}
+		
+		.sidenav a {
+		    padding: 6px 8px 6px 16px;
+		    text-decoration: none;
+		    font-size: 10px;
+		    color: #818181;
+		    display: block;
+		}
+		
+		.sidenav a:hover {
+		    color: #f1f1f1;
+		}
+		
+		.container {
+		    margin-left: 160px; /* Same as the width of the sidenav */
+		    padding: 0px 10px;
+		}
+		
+		.navbar-brand {
+		    margin-left: 160px; /* Same as the width of the sidenav */
+		    padding: 0px 10px;
+		}
+		
+		@media screen and (max-height: 450px) {
+		    .sidenav {padding-top: 15px;}
+		    .sidenav a {font-size: 18px;}
+		}
+		</style>	
+	
+	    <title>Entities</title>
+	    
+	</head>
+
+	<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Entities</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Features)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	<!-- Side navigation -->
+	<div class="sidenav">
+		<a href="#summary">Summary</a>
+		<a href="#entity">Entity</a>
+		<a href="#creational">Creational Strategy</a>
+		<a href="#agent">Agent</a>
+		<a href="#attribute">Attribute</a>
+		<a href="#source">Source</a>
+		<a href="#supplementary">Supplementary Structure</a>
+		<a href="#relationships">Relationships</a>
+	</div>
+	
+	<section id="Entities">
+	 <div class="container">
+	  
+		<h1 id="summary">Summary</h1>
+		
+		<p> An Entity is a relevant object that exists in a simulation. </p>
+				
+		<p> <a href="#entities">Fig. 1</a> shows all the objects related to the entities that can 
+		be managed on the ABStractme Tool.</p>
+		
+		<figure id="entities"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entities.png" alt="Entities.">
+			<figcaption class="figure-caption text-center">Fig. 1. Entities.</figcaption>
+	  	</figure>
+	  	
+	  	<h4 id="entity"> Entity </h4>
+	  	
+	  	<p> Any relevant object that exists in a simulation should be represented as an entity.</p>
+		
+		<p> An entity may have attributes and relationships. A creational strategy may be associated with an entity
+		to describe how instances are created at the setup of the simulation.</p>	
+		
+	  	<p> An entity is represented by a box with the following three sections:</p>
+		<p> i) the entity name: any valid string (spaces are allowed).</p>
+		<p> ii) how it is created (creational strategies).</p>
+		<p> iii) its attributes.</p>
+	  	
+	  	<p> <a href="#entities-box">Fig. 2</a> shows the box that represents the entity on the diagram.</p>
+	  	
+	  	<figure id="entities-box"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_box.png" alt="Entity Box.">
+			<figcaption class="figure-caption text-center">Fig. 2. Entity Box.</figcaption>
+	  	</figure>
+	  	
+		<p> <a href="#entities-basic">Fig. 3</a> shows how to define the entity name in the properties.</p>
+	  	
+		<figure id="entities-basic"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_basic.png" alt="Entity name.">
+			<figcaption class="figure-caption text-center">Fig. 3. Entity name.</figcaption>
+	  	</figure>
+	  	
+	  	<h4 id="creational"> Creational Strategy</h4> 
+	  	
+	  	<p> A creational strategy abstracts how entities (and agents) are created and located in the environment.</p>
+	  	
+	  	<p> Each strategy requires additional elements, such as files or sources. </p>
+	  	
+	  	<p> All creational strategies are represented in the creation section of an entity box.
+     	The first element in this creation section is the strategy type. </p>
+	  	
+	  	<p> The following four creational strategies are supported:</p>
+	  	
+	  	
+		<b> i) Designer Defined </b>
+		
+		<p> The designer is in charge of specifying the number of entities that are created and
+		their locations using sources. </p>
+		
+		<p> Only the following sources are accepted:</p>
+		
+		<p> – Quantity: Static Value (V), Manual (only MI,MB, or MLV), Parameter (P), or Expression (E).
+		In all these cases, the resulting value of the source must be an integer value. </p>
+		
+		<p> – Location: Static Value (V), Manual (only MI or MLV), or Expression (E). The resulting value of
+		the source must be the absolute position of the entity on the environment (e.g., (x,y) coordinate).
+		For an Expression source, the result value can also be the name of another entity specified in the
+		model. In such a case, the newly created entity will be located at the same position as one existing
+		entity whose name was provided. </p>
+		
+		<p> Quantity and location are shown one per line, as shown in <a href="#entities-designer">Fig. 4.</a> </p>
+		
+		<figure id="entities-designer"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_designer_defined.png" alt="Designer Defined.">
+			<figcaption class="figure-caption text-center">Fig. 4. Designer Defined.</figcaption>
+	  	</figure>
+	  	
+	  	
+	  	<b> ii) CSV File </b>
+	  	
+		<p> A CSV file must be provided. One entity is created for each line of the CSV file, and the
+		comma separated fields are available for use in Expression (E) sources to initialize entity attributes.</p>
+		
+		<p> A line with the file path is shown. </p>
+		
+		<p> <a href="#entities-csv">Fig. 5</a> shows how to associate the CSV File strategy to an entity. </p>
+		
+		<figure id="entities-csv"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_csv.png" alt="CSV.">
+			<figcaption class="figure-caption text-center">Fig. 5. CSV.</figcaption>
+	  	</figure>
+		
+		
+		<b> iii) GIS File </b>
+	  	
+		<p> An ASCII GIS file must be provided. One entity is created for each data value, and its location
+		is the spatial unit at that coordinate.</p>
+		
+		<p> A line with the file path is shown. </p>
+		
+		<p> <a href="#entities-gis">Fig. 6</a> shows how to associate the GIS File strategy to an entity. </p>
+		
+		<figure id="entities-gis"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_gis.png" alt="GIS.">
+			<figcaption class="figure-caption text-center">Fig. 6. GIS.</figcaption>
+	  	</figure>
+
+		
+		<b> iv) Shape File </b>
+		
+		<p> A GIS Shape file must be provided. This strategy can be only used to create an
+		entity which is composed of one, two, or three other entities as specified using composition relationships.
+		In such a case, one instance of the composite entity is created, and its contained entities are generated
+		according to the mapping of points, lines, and polygons to their corresponding entity types.</p>
+	  	
+	  	<p> A line with the file path is shown. Additional lines are included to specify the mapping of points, lines, and
+		polygons to their corresponding entity types. At least a point mapping must be defined. Line and polygon
+		mappings are optional.</p>
+	  	
+		<p> <a href="#entities-line">Fig. 7</a> shows how to associate the Shape File strategy to an entity. </p>	  	
+	  	
+		<figure id="entities-line"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_entity_line.png" alt="Line Shape File.">
+			<figcaption class="figure-caption text-center">Fig. 7. Line Shape File.</figcaption>
+	  	</figure>
+	  	
+	  	<h4 id="agent"> Agent </h4>
+	  	
+	  	<p> An agent is a particular kind of entity that has agent capabilities, such as decision capabilities (learning,
+		adaptation, state machines), and behavioral capabilities.</p>
+	  	
+	  	<p> The concrete syntax of agents extends the syntax of entities: a box with sections.</p>
+	  	
+	  	<p> In addition to the name, creation, and attributes section, an agent box has an additional section to specify its
+		capabilities. This capabilities section is located in between the name and creation section.</p>
+	  	
+	  	<p> In the capabilities section, agent capabilities are enumerated.</p>
+	  	
+		<p> <a href="#entities-agent">Fig. 8</a> shows the box that represents the agent on the diagram. </p>	  	
+	  	
+		<figure id="entities-agent"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_agent.png" alt="Agent box.">
+			<figcaption class="figure-caption text-center">Fig. 8. Agent box.</figcaption>
+	  	</figure>
+	  	
+	  	<h4 id="attribute"> Attribute </h4>
+	  	
+	  	<p> An entity is an abstract Type, so, it can be used to define attributes.</p>
+	  	
+	  	<p> An attribute represents a variable value, which could be a state variable of entities and agents or a parameter
+		of the simulation.</p>
+	  	
+	  	<p> An attribute is described by its name, type, and cardinality (i.e. whether this value is a collection and of
+		how many elements). It is associated with a value when a simulation runs.</p>
+		
+		<p> <a href="#entities-attribute-basic">Fig. 9</a> shows how to define the attribute name, type and cardinality in the properties </p>	  	
+
+	  	<!-- attributes, init, update(all possibilities)-->
+		<figure id="entities-attribute-basic"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_basic.png" alt="Attribute basic.">
+			<figcaption class="figure-caption text-center">Fig. 9. Attribute basic.</figcaption>
+	  	</figure>
+	  		  	
+		
+	  	<p> An attribute has a type, which can be a primitive type or a complex type. The following are primitive types:</p>
+	  	
+	  	<p>STRING: text values; line breaking is not accepted. </p>
+	  	<p>INTEGER: integer values. </p>
+	  	<p>DECIMAL: decimal values. </p>
+	  	<p>BOOLEAN: boolean values (true/false).</p>
+	  	
+	  	<p>Either a primitive or a complex type can be assigned to an attribute.</p>
+	  	
+	  	<p> <a href="#entities-attribute-type">Fig. 10</a> shows the primitive and complex types available to select in the attribute properties. </p>	  	
+	  	
+	  	<figure id="entities-attribute-type"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_type.png" alt="Attribute type.">
+			<figcaption class="figure-caption text-center">Fig. 10. Attribute type.</figcaption>
+	  	</figure>
+	  	
+	  	<p> If the attribute is assigned to an entity or an agent, it represents a structural feature (or, in other words, a state
+		variable).</p>
+	  	
+	  	<p> Sources can be related to an attribute, to set its initial value, or to update its value at each timestep.</p>
+	  	
+	  	<p> <a href="#entities-attribute-init">Fig. 11</a> shows the initial value properties section. </p>	  	
+	  	
+	  	<figure id="entities-attribute-init"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_init.png" alt="Attribute initialization.">
+			<figcaption class="figure-caption text-center">Fig. 11. Attribute initialization.</figcaption>
+	  	</figure>
+	  	
+	  	<p> <a href="#entities-attribute-update">Fig. 12</a> shows the update value properties section. </p>	  	
+	  	
+	  	<figure id="entities-attribute-update"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_update.png" alt="Attribute update.">
+			<figcaption class="figure-caption text-center">Fig. 12. Attribute update.</figcaption>
+	  	</figure>
+	  	
+		
+		<h4 id="source"> Source </h4>
+
+	  	<p> A source abstracts the provision of values, hiding low-level details of how values are provided.</p>
+	  	
+	  	<p> <a href="#entities-attribute-source">Fig. 13.</a> and <a href="#entities-attribute-source2">Fig. 14.</a> show the possible sources to select in the attribute properties. </p>	  	
+
+	  	<figure id="entities-attribute-source"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source1.png" alt="The source.">
+			<figcaption class="figure-caption text-center">Fig. 13. The source.</figcaption>
+	  	</figure>
+	  	<figure id="entities-attribute-source2"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source2.png" alt="The source.">
+			<figcaption class="figure-caption text-center">Fig. 14. The source.</figcaption>
+	  	</figure>	  	  	
+	  	
+	  	<p> A source is represented by its identifier, the following are possible identifiers:</p>
+	  	
+	  	<b> Parameter: </b>
+	  	
+	  	<p> The provided value is the value of a previously defined parameter.</p>
+
+	  	<p> <a href="#entities-attribute-source-parameter">Fig. 15.</a> shows the parameter source being set in the properties section. </p>	  	
+	  	
+	  	<figure id="entities-attribute-source-parameter"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_parameter.png" alt="The parameter source.">
+			<figcaption class="figure-caption text-center">Fig. 15. The parameter source.</figcaption>
+	  	</figure>	  	
+	  	
+	  	<b> Static Value: </b>
+	  	
+	  	<p> The designer informs the value directly in the specification. </p>
+	  	
+	  	<p> <a href="#entities-attribute-source-static">Fig. 16.</a> shows the static value being set in the properties section. </p>	  	
+	  	
+	  	<figure id="entities-attribute-source-static"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_static.png" alt="The static value source.">
+			<figcaption class="figure-caption text-center">Fig. 16. The static value source.</figcaption>
+	  	</figure>
+
+	  	<b> Manual: </b>
+	  	
+	  	<p> The value is provided at runtime, using some input component. The
+		following are the supported manual sources:</p>
+		
+		<p> Manual Input: a manual input that accepts a string or numeric values.</p>
+
+	  	<p> <a href="#entities-attribute-source-manual-input">Fig. 17</a> shows the manual input in the properties section. </p>	  	
+
+	  	<figure id="entities-attribute-source-manual-input"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_manual_input.png" alt="The manual input value source.">
+			<figcaption class="figure-caption text-center">Fig. 17. The manual input value source.</figcaption>
+	  	</figure>
+	  	
+	  	<p> Manual Yes/No: manual yes/no input that may be used for boolean values.</p>
+	  	
+	  	<p> <a href="#entities-attribute-source-manual-yes">Fig. 18.</a> shows the manual yes/no input being set in the properties section. </p>	  	
+	  	
+	  	<figure id="entities-attribute-source-manual-yes"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_manual_yes.png" alt="The manual yes/no value source.">
+			<figcaption class="figure-caption text-center">Fig. 18. The manual yes/no value source.</figcaption>
+	  	</figure>
+	  	
+	  	<p> Manual Bounded: manual input of numeric values. This source creates an input component that
+		allows numeric values bounded by a min-max interval and that are multiples
+		of a step value. I.e., min=3, max=9, step=2 accepts the following values:
+		3,5,7,9.</p>
+		
+	  	<p> <a href="#entities-attribute-source-manual-bounded">Fig. 19</a> shows the manual bounded input being set in the properties section. </p>	  	
+	  			
+	  	<figure id="entities-attribute-source-manual-bounded"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_manual_bounded.png" alt="The manual bounded value source.">
+			<figcaption class="figure-caption text-center">Fig. 19. The manual bounded value source.</figcaption>
+	  	</figure>
+	  	
+	  	<p> Manual from List: Manual input whose value is picked from a list of allowed values.</p>
+	  	
+	  	<p> <a href="#entities-attribute-source-manual-list">Fig. 20</a> shows the manual from a list values input being set in the properties section. </p>	  		  	
+	  		  	
+	  	<figure id="entities-attribute-source-manual-list"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_manual_list.png" alt="The manual from a list of values source.">
+			<figcaption class="figure-caption text-center">Fig. 20. The manual from a list of values source.</figcaption>
+	  	</figure>
+
+	  	<b> Expression: </b>
+	  	
+	  	<p> An expression specifies the operations over values or parameters that are used
+		to compute the resulting value.</p>
+	  	
+	  	<p> <a href="#entities-attribute-source-expression">Fig. 21</a> shows the expression source input being set in the properties section. </p>	  		  	
+
+	  	<figure id="entities-attribute-source-expression"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_expression.png" alt="The expression source.">
+			<figcaption class="figure-caption text-center">Fig. 21. The expression source.</figcaption>
+	  	</figure>
+
+		<p>The sources below read values from files.
+		How values are interpreted depends on the element whose source is related to.</p>
+
+	  	<b> Comma Separated Values: </b>
+	  	
+	  	<p>The value is read from a CSV file. </p>
+	  	
+	  	<p> <a href="#entities-attribute-source-csv">Fig. 22</a> shows the CSV file source input being set in the properties section. </p>	  		  	
+
+	  	<figure id="entities-attribute-source-csv"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_csv.png" alt="The file CSV source.">
+			<figcaption class="figure-caption text-center">Fig. 22. The file CSV source.</figcaption>
+	  	</figure>
+
+	  	<b> Geographic Information System: </b>
+	  	
+	  	<p> The value is read from an ASCII GIS file (.gis extension), which is a tabular
+		data file, in which each value is associated with a point in the space.</p>
+
+	  	<p> <a href="#entities-attribute-source-gis">Fig. 23</a> shows the GIS file source input being set in the properties section. </p>	  		  	
+
+	  	<figure id="entities-attribute-source-gis"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_gis.png" alt="The file GIS source.">
+			<figcaption class="figure-caption text-center">Fig. 23. The file GIS source.</figcaption>
+	  	</figure>	 
+
+	  	<b> Geospatial Vector Data: </b>
+	  	
+	  	<p>The value is read from an SHP file (.shp extension), which is a structured data
+		file that represents points, lines or polygons in the space.</p>
+		
+	  	<p> <a href="#entities-attribute-source-shp">Fig. 24</a> shows the SHP file source input being set in the properties section. </p>	  		  			
+
+	  	<figure id="entities-attribute-source-shp"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_attribute_source_shp.png" alt="The file SHP source.">
+			<figcaption class="figure-caption text-center">Fig. 24. The file SHP source.</figcaption>
+	  	</figure>
+	  		  	
+	  	
+	  	<h4 id="supplementary"> Supplementary Structure </h4>
+	  	
+	  	<p> Supplementary structures are used to group related elements in the concern. They
+	  	support spatial unit attributes. They are necessary when we need attributes that are common to
+	  	all entities of the concern. The spatial unit must be set according to the type of the spatial unit entity that can
+	  	be placed on the overview diagram. </p>
+	  	
+	  	<p> <a href="#entities-supp">Fig. 25</a> shows the box that represents the supplementary structure on the diagram. </p>	  		  				  	
+	  	
+	  	<!-- supp-->
+	  	<figure id="entities-supp"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_supp.png" alt="The supplementary structure.">
+			<figcaption class="figure-caption text-center">Fig. 25. The supplementary structure.</figcaption>
+	  	</figure>	
+	  	
+	  	
+	  	<h4 id="relationships"> Relationships </h4>
+	  	
+	  	<p> A relationship abstracts a relation that may exist between entities.</p>
+	  	
+	  	<p> A relationship specifies sources and target entities.</p>
+		<p> An entity can have many relationships. The source entity owns the relationship.</p> 
+		<p> A relationship also specifies its type and direction.</p> 
+		<p> The cardinality of a relationship specifies how many target entities may be related to the source entity during
+		the execution of a simulation. The semantic of the cardinality value is as follows.</p>
+		
+		<p> -1: indicates that many (unlimited) target entities can be related to the source entity.</p>
+		<p> 1: indicates that precisely one target entity can be related to the source entity.</p>
+		<p> any value > 1: indicates the number of target entities that can be related to the source entity.</p>
+		<p> 0: not allowed, does not make sense.</p>
+		
+		<p> Relationship types and their semantics are described as follows.</p>
+		
+		<b> Association </b>
+		
+		<p> Indicates that the source entity is a group of entities. Such a group may have particular attributes and
+		is created following a creational strategy. E.g., a friendship entity abstracts a group of two or more
+		people; a traffic link entity abstracts a group of two traffic nodes.</p>
+		
+		<p> Note: cardinality specifies the number of participants of the group and so must be greater than 2.</p>
+		
+		<p> <a href="#entities-association">Fig. 26</a> shows an example of an Association relationship. </p>	  	
+		
+		<!-- association-->
+	  	<figure id="entities-association"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_association.png" alt="The association relationship.">
+			<figcaption class="figure-caption text-center">Fig. 26. The association relationship.</figcaption>
+	  	</figure>	
+	  	
+		
+		<b> Composition </b>	 
+		
+		<p> Indicates that the source entity is composed of instances of the target entity, representing a whole-part
+		relationship.</p>
+		
+		<p> Its semantics is related to the creation of the component entities: the whole (source) is responsible
+		for creating the parts (targets), and the whole does not exist without its parts. For example, a traffic
+		network is composed of traffic nodes and traffic links.</p>
+		
+		<p> An entity who is the source of a composition relationship must specify a creational strategy that abstracts
+		the instantiation of related entities (e.g. a shape file strategy).</p>
+		 
+		<p> <a href="#entities-composition">Fig. 27</a> shows an example of a Composition relationship. </p>	  	
+		
+	  	<!-- composition-->
+	  	<figure id="entities-composition"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_composition.png" alt="The composition relationship.">
+			<figcaption class="figure-caption text-center">Fig. 27. The composition relationship.</figcaption>
+	  	</figure>	
+		
+		<b> Container </b>
+		
+		<p> Indicates that the source entity can contain instances of the target entity. </p>
+		
+		<p> Its semantics are related to a physical sense of containment, e.g. a relief center may contain civilians.</p>	
+			
+		<p> <a href="#entities-container">Fig. 28</a> shows an example of a Container relationship. </p>	  	
+		
+	  	<!-- container-->
+	  	<figure id="entities-container"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_container.png" alt="The container relationship.">
+			<figcaption class="figure-caption text-center">Fig. 28. The container relationship.</figcaption>
+	  	</figure>
+			
+	  	<p> The semantics of relationship directions are related to the awareness of the relationship. </p>
+	  	
+	  	<b> Unidirectional </b>
+	  	
+	  	<p> Only the source entity is aware of the relationship. Consequently, any Expression
+		source in the source entity can refer to the target entities. Examples:</p>
+	  	
+	  	<p> Composition between traffic network (source) and traffic link (target). The traffic
+		network entity can specify an Expression to count the number of vehicles in all its traffic links:
+		sum( vehicles( traffic links ) ).</p>
+	  	
+	  	<p> Container between relief center (source) and civilian (target). The relief center entity
+		can specify an Expression to compute the sum of the energy of civilians it contains:
+		sum ( energy( civilians ) ).</p>
+	  	
+	  	<p> Association between the team (source) and player (target). The team entity can specify an 
+	  	Expression to compute the average age of its players: avg( age( players ) ).</p>
+	  	
+	  	<p> <a href="#entities-unidirectional">Fig. 29</a> shows an example of a unidirectional relationship. </p>	  	
+		
+	  	<!-- container-->
+	  	<figure id="entities-unidirectional"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_unidirectional.png" alt="A unidirectional relationship.">
+			<figcaption class="figure-caption text-center">Fig. 29. A unidirectional relationship.</figcaption>
+	  	</figure>
+	  	
+	  	<b> Bidirectional </b>
+	  	
+	  	<p> Both source and target entities are aware of the relationship. Consequently, any
+		Expression source in the source can refer to the target, and vice-versa.</p>
+		
+	  	<p> <a href="#entities-bidirectional">Fig. 30</a> shows an example of a bidirectional relationship. </p>	  	
+		
+	  	<!-- container-->
+	  	<figure id="entities-bidirectional"> 
+			<img class="img-fluid mx-auto d-block" src="../../../figs/features_bidirectional.png" alt="A bidirectional relationship.">
+			<figcaption class="figure-caption text-center">Fig. 30. A bidirectional relationship.</figcaption>
+	  	</figure>
+	  	
+			    
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

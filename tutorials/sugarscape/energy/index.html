@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+
+    <title>Creating the Sugarscape simulation</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Creating the Sugarscape Simulation</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Sugarscape Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="installation">
+	 <div class="container">
+	  <h4>Adding energy to the agents</h4>
+	
+	  <p> This tutorial will show you how to expand the initial version of the sugarscape simulation created previously, 
+	  to help understand the ABStractme tool features. </p>
+	  
+	  <p> First, add energy to the agents, which will be depleted with each step
+	  of the simulation. </p>
+	  
+	  <p> If it reaches zero, the agent in question will die. </p>
+	  
+	  <p> This energy can be replenished if the agent
+	  manages to collect sugar.</p>
+	  
+	  <p> Start by adding the energy attribute to the agent. This attribute must be added in a different way
+	  than the previously created attributes. </p>
+	  
+	  <p> Select an energy to add, by clicking on the Surviving > "Energy" line
+	  on the palette and clicking on the agent box. </p>
+	  
+	  <p> A new box will be added to the diagram, notice that it is connected to the agent.</p> 
+	  
+	  <p> The resulting box will look like <a href="#energy-1">Fig. 1</a>.</p>
+	  
+	  <figure id="energy-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_energy1.png" alt="Adding energy to the agents.">
+		<figcaption class="figure-caption text-center">Fig. 1. Adding energy to the agents.</figcaption>
+	  </figure>
+	  
+	  <p> Select the "energy" line on the new box created.</p> 
+	  
+	  <p> On the properties view, on the "Updated By" field, select the "sugarMetabolism" 
+	  attribute previously created, edit the name to have a "-" before,
+	  like "-sugarMetabolism", as the metabolism will be decremented on each step.</p>
+	  
+	  <p> On the "Life Condition" field, set the value to "> 0", as the agent will stay
+	  alive while this value is bigger than zero.</p>	  
+	  
+	  <p> On the "Initial Value" field, set the value to "1 + random(5)", so that each agent 
+	  will start with an energy value between 1 and 5. </p>
+	  
+	  <p> The resulting properties view will look like <a href="#energy-properties">Fig. 2</a>.</p>	
+	   
+	  <figure id="energy-properties">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_energyProperties.png" alt="Energy properties.">
+		<figcaption class="figure-caption text-center">Fig. 2. Energy properties.</figcaption>
+	  </figure>
+	  
+	  <p> Now create the sugar attribute to represent the sugar on the map. This attribute, however,
+	  is not part of the agent.</p>	
+	  
+	  <p> First, create a supplementary structure, select one to add, 
+	  by clicking on the Entities > "Supplementary Structure" line on the palette and clicking 
+	  anywhere on the diagram. </p>	
+	  
+	  <p> The created box will look like <a href="#energy-supp">Fig. 3</a>.</p>	
+	  
+	  <figure id="energy-supp">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_supp.png" alt="Adding the supplementary structure.">
+		<figcaption class="figure-caption text-center">Fig. 3. Adding the supplementary structure.</figcaption>
+	  </figure>
+	 
+	  <p> Now add the sugar attribute to the supplementary structure, select one to add, 
+	  by clicking on the Entities > "Attribute" line on the palette and clicking 
+	  on the supplementary structure box.</p>
+	  	
+	  <p> You can select the attribute created. On the "Basic" properties view that appeared, change the attribute name to "sugar" and its
+	  type to "INTEGER". </p>	
+	  
+	  <p> The resulting attribute will look like <a href="#sugar-1">Fig. 4</a>.</p>	
+	  	 
+	  <figure id="sugar-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_sugar1.png" alt="The sugar attribute.">
+		<figcaption class="figure-caption text-center">Fig. 4. The sugar attribute.</figcaption>
+	  </figure>
+	  
+	  <p> Change to the "Initialization" tab. On the field "Source" select "Expression". </p>	 
+	  
+	  <p> Set the field "Expression" that appeared to "random(4)". The initial 
+	  sugar value will be between 0 and 4. </p>	
+	  
+	  <p> The resulting "Initialization" tab will look like <a href="#sugar-2">Fig. 5</a>.</p>	
+	  	 
+	  <figure id="sugar-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_sugar2.png" alt="Sugar attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 5. Sugar attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> To make the sugar cells look yellow on the map, add coloring to them, this feature
+	  can only be added with an external NetLogo capability.</p>	
+	  
+	  <p> To add the external NetLogo capability, select one to add, 
+	  by clicking on the External > "Existing NetLogo Capability" line on the palette and clicking 
+	  on the supplementary structure box.</p>
+	  
+	  <p> A new window will pop up. Select the file with the NetLogo code corresponding to
+	  the capability to use. </p>
+	  
+	  <p> In this case, use the "color-cells-by-sugar-mdd4abms.nls" file
+	  available to download on the following link. </p>
+	  
+	  <p><a href="../../../downloads/color-cells-by-sugar-mdd4abms.nls">Download link</a></p>
+
+	  <p> After choosing the file, the resulting created box will look like <a href="#color-cells">Fig. 6</a>.</p>		  
+	  	 
+	  <figure id="color-cells">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_colorCells.png" alt="Adding color to the sugar cells.">
+		<figcaption class="figure-caption text-center">Fig. 6. Adding color to the sugar cells.</figcaption>
+	  </figure>
+	  
+	  <p> Add another external capability, this time to allow the agents to harvest the sugar.</p>
+	  
+	  <p> To add the external NetLogo capability, select one to add, 
+	  by clicking on the External > "Existing NetLogo Capability" line on the palette and clicking 
+	  on the agent box.</p>
+	  
+	  <p> A new window will pop up. Select the file with the NetLogo code corresponding to
+	  the capability to use. </p>
+	  
+	  <p> In this case, use the "harvestSugar.nls" file available to download on the following link. </p>
+	  
+	  <p><a href="../../../downloads/harvestSugar.nls">Download link</a></p>
+	  
+	  <p> After choosing the file, the resulting created box will look like <a href="#harvest-sugar">Fig. 7</a>.</p>	
+	  		 
+	  <figure id="harvest-sugar">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_harvestSugar.png" alt="Adding agent capability to harvest sugar.">
+		<figcaption class="figure-caption text-center">Fig. 7. Adding agent capability to harvest sugar.</figcaption>
+	  </figure> 
+
+	  <p> Also, add a graphic to monitor the number of agents alive at each step of the 
+	  simulation.</p>	
+	  
+	  <p> To add the graphic, select one to add, by clicking on the Output > "Output Dataset" line 
+	  on the palette and clicking anywhere on the diagram.</p>
+	  
+	  <p> You can select the box created. On the properties view that appeared, focus on the left column. </p> 
+	  
+	  <p> You can choose a name to give to the graphic on the "Name" field. Inside the output rectangle, 
+	  click on the "+" button.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the line to be added to the graphic. Also,
+	   select the entity related to the defined line. </p>
+	  
+	  <p> On the "Entity" field choose the agent created previously. Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> If you select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting left column will look like <a href="#quantity">Fig. 8</a>.</p>	
+	  	 
+	  <figure id="quantity">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_quantity.png" alt="Adding a graphic to monitor agent population.">
+		<figcaption class="figure-caption text-center">Fig. 8. Adding a graphic to monitor agent population.</figcaption>
+	  </figure> 
+	  
+	  <p> <a href="#complete">Fig. 9</a> shows what the entire concern diagram will look like after the changes made in this tutorial.</p>		 
+	  
+	  <figure id="complete">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_complete.png" alt="Overview of the simulation after the changes.">
+		<figcaption class="figure-caption text-center">Fig. 9. Overview of the simulation after the changes.</figcaption>
+	  </figure> 
+
+	  <p> Export and run the simulation on NetLogo, detailed instructions on the link: <a href="../../basic/index.html#exporting-netlogo">Exporting the Project to NetLogo</a>.
+	  The simulation will look like <a href="#netlogo">Fig. 10</a>.</p>	
+	  	 
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_energy_netlogo.png" alt="The simulation running on NetLogo.">
+		<figcaption class="figure-caption text-center">Fig. 10. The simulation running on NetLogo.</figcaption>
+	  </figure> 
+ 	  
+ 	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../../downloads/sugarscapeV2.zip">Download link</a></p>
+ 	  
+ 	  
+	  <p> Notice that the agents will die quickly once all the sugar is consumed. On the third part 
+	  of this tutorial, the sugar will reappear after a certain amount of steps and
+	  a reproduction capability will be added to the agents: 
+	  <a href="../reproduction/index.html">Adding reproduction and extra features to the agents</a>.</p>		 		 
+	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

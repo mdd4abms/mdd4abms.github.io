@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+		
+			gtag('config', 'UA-120620574-1');
+			
+			$('body').scrollspy({ target: '#list-example' })
+			
+		</script>
+		
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous">
+		</script>
+			
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous">
+		</script>
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+			integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+			crossorigin="anonymous">
+			
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+			integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+			crossorigin="anonymous">
+		</script>
+		
+		<link href="css/customization.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css"
+			href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+		
+		<style type='text/css'>
+		body {
+			position: relative;
+		}
+		 /* The sidebar menu */
+		.col-2 {
+		    width: 160px; /* Set the width of the sidebar */
+		    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+		    z-index: 1; /* Stay on top */
+		    left: 0;
+		    overflow-x: hidden; /* Disable horizontal scroll */
+		    padding-top: 20px;
+		}
+		
+		/* The navigation menu links */
+		.col-2 a {
+		    padding: 6px 8px 6px 16px;
+		    text-decoration: none;
+		    font-size: 15px;
+		    color: #818181;
+		    display: block;
+		}
+		
+		/* When you mouse over the navigation links, change their color */
+		.col-2 a:hover {
+		    color: #f1f1f1;
+		}
+		
+		/* Style page content */
+		.col {
+		    margin-left: 160px; /* Same as the width of the sidebar */
+		    padding: 0px 10px;
+		}
+		
+		/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+		@media screen and (max-height: 450px) {
+		    .col-2 {padding-top: 15px;}
+		    .col-2 a {font-size: 18px;}
+		} 
+		
+		
+		
+		</style>	
+	
+	    <title>Capabilities</title>
+	    
+	</head>
+
+	<body data-spy="scroll" data-target="#list-example">
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-default navbar-static-top">
+			<div class="container">
+				<a class="navbar-brand" href="#">Capabilities</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+				  <ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+					  <a class="nav-link" href="../index.html">(back to Features)<span class="sr-only">(current)</span></a>
+					</li>
+				  </ul>
+				</div>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-2">
+				<!--Nav Bar -->
+				<div id="list-example" class="list-group">
+					<a class="list-group-item list-group-item-action" href="#summary">Summary</a>
+					<a class="list-group-item list-group-item-action" href="#mobility">Mobility</a>
+					<a class="list-group-item list-group-item-action" href="#surviving">Surviving</a>
+					<a class="list-group-item list-group-item-action" href="#decisions">Decision Capabilities</a>
+					<a class="list-group-item list-group-item-action" href="#state">State Machine</a>
+					<a class="list-group-item list-group-item-action" href="#learning">Learning</a>
+					<a class="list-group-item list-group-item-action" href="#adaptation">Adaptation</a>
+					<a class="list-group-item list-group-item-action" href="#flow-control">Flow Control</a>
+					<a class="list-group-item list-group-item-action" href="#diseases">Diseases</a>
+				</div>
+			</div>
+
+			<div class="col">
+				<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+					<h4 id="summary">Summary</h4>
+						 	
+				 	<p> Agent capabilities abstract behaviors and abilities that are recurrent in agents.</p>
+				 	
+					<h4 id="mobility">Mobility</h4>
+					
+					<p> The mobility capability gives the agent the capability to move. </p>
+			
+					<p> <a href="#mobility">Fig. 1</a> shows all the objects related to the mobility capability that can 
+					be managed on the ABStractme Tool.</p>	 	
+			
+					<figure id="mobility"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_mobility.png" alt="Mobility.">
+						<figcaption class="figure-caption text-center">Fig. 1. Mobility.</figcaption>
+				  	</figure>
+					
+					<p> The random walk mobility provides randomized movement to the agent. 
+					The range can be either unlimited or limited by a certain value. </p>
+					
+					<p> In the case of a limited range, attributes of the type INTEGER can be used as the upper or lower bounds.</p>
+				 	
+					<p> <a href="#mobility-random">Fig. 2.</a> shows the box that represents the random walk mobility on the diagram along 
+					with the properties view to edit the mobility id and its range.</p>
+					
+					<figure id="mobility-random"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_random_walk.png" alt="The random walk mobility.">
+						<figcaption class="figure-caption text-center">Fig. 2. The random walk mobility.</figcaption>
+				  	</figure>
+				  	
+				  	<p> The closest best mobility uses a criteria to define the best position for the agent to move towards to. </p>
+				  	
+					<p> <a href="#mobility-closest">Fig. 3</a> shows the box that represents the closest best mobility on the diagram along 
+					with the properties view to edit the mobility id and its range.</p>	  	
+				  	
+					<figure id="mobility-closest"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_closest_best.png" alt="The closest best mobility.">
+						<figcaption class="figure-caption text-center">Fig. 3. The closest best mobility.</figcaption>
+				  	</figure>
+				  	
+				  	<p> The closest best mobility needs a supplementary structure attribute 
+				  	to be the criteria for the best position to move to, either the position where 
+				  	the attribute value is the smallest or biggest from all available positions.</p>
+				  	
+					<p> <a href="#mobility-closest-objective">Fig. 4</a> shows the properties view where the attribute can be set,
+					with the objective being to minimize (smallest value) or to maximize (biggest value).</p>		  	
+				  	
+					<figure id="mobility-closest-objective"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_closest_best_objective.png" alt="The objective function.">
+						<figcaption class="figure-caption text-center">Fig. 4. The objective function.</figcaption>
+				  	</figure>	  
+				  	
+					<p> The mobility capabilities can be shared between more than one agent to avoid having to set the same mobility for every agent, as shown
+					on <a href="#mobility-endue">Fig. 5</a>.</p>		  	
+				  			  		  	
+					<figure id="mobility-endue"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_endue_mobility.png" alt="Provide agent with mobility.">
+						<figcaption class="figure-caption text-center">Fig. 5. Provide agent with mobility.</figcaption>
+				  	</figure>	  	
+								  
+					<h4 id="surviving">Surviving</h4>
+					
+					<p> The surviving capability represents conditions for a agent to die. 
+					A agent death can happen by age (after a defined number of timesteps) or by 
+					depletion of energy(example: starvation) or even a custom condition.</p>
+					
+					<p> <a href="#surviving">Fig. 6</a> shows all the objects related to the surviving capability that can 
+					be managed on the ABStractme Tool.</p>	 	
+					
+					<figure id="surviving"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_surviving.png" alt="Surviving.">
+						<figcaption class="figure-caption text-center">Fig. 6. Surviving.</figcaption>
+				  	</figure>
+				  	
+					<p> <a href="#mobility-random">Fig. 7</a> shows the box that represents the living age capability on the diagram along 
+					with the properties view to edit the living id.</p>
+						  	
+					<figure id="surviving-age"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_age.png" alt="Age.">
+						<figcaption class="figure-caption text-center">Fig. 7. Age.</figcaption>
+				  	</figure>	  	
+						
+					<p> <a href="#surviving-age-properties">Fig. 8</a> shows the properties view to edit the age attribute.</p>
+						  				
+					<figure id="surviving-age-properties"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_age_properties.png" alt="Age properties.">
+						<figcaption class="figure-caption text-center">Fig. 8. Age properties.</figcaption>
+				  	</figure>			
+			
+					<p> <a href="#surviving-energy">Fig.9</a> shows the properties view to edit the energy attribute.</p>
+			
+					<figure id="surviving-energy"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_energy.png" alt="Energy properties.">
+						<figcaption class="figure-caption text-center">Fig. 9. Energy properties.</figcaption>
+				  	</figure>
+			
+					<p> <a href="#surviving-energy">Fig.10</a> shows the properties view to edit the custom attribute.</p>
+			
+					<figure id="surviving-custom"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_surviving_custom.png" alt="Custom properties.">
+						<figcaption class="figure-caption text-center">Fig. 10. Custom properties.</figcaption>
+				  	</figure>
+			
+					<p> The surviving capabilities can be shared between more than one agent to avoid having to set the same for every agent, as shown
+					on <a href="#surviving-endue">Fig. 11</a>.</p>
+			
+					<figure id="surviving-endue"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_surviving_endue.png" alt="Provide agent with surviving.">
+						<figcaption class="figure-caption text-center">Fig. 11. Provide agent with surviving.</figcaption>
+				  	</figure>
+			
+					<h4 id="decisions">Decision Capabilities</h4>
+					
+					<p> A decision capability represents a decision policy for selecting one option among all the available decision options.</p>
+					
+					<p> In order to use a decision capability, an agent must have a decision capability set as update source of an attribute.</p>
+					
+					<p> Decision capabilities represent decision policies for updating attributes. When an attribute specifies a decision
+					capability as it update source, the decision capability decides (selects) the attribute value at each timestep.</p>
+					
+					<p> <a href="#decisions">Fig. 12</a> shows all the objects related to the decision capabilities that can 
+					be managed on the ABStractme Tool.</p>
+					
+					<figure id="decisions"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_decisions.png" alt="Decisions.">
+						<figcaption class="figure-caption text-center">Fig. 12. Decisions.</figcaption>
+				  	</figure>
+				  	
+					<p> Any decision capability has a decide() operation, to decide which decision option must be selected given its
+					decision policy.</p>
+					
+					<p> The set of available decision options can static, or dynamic.</p>	  
+					
+					<p> Static decision options are specified by the designer during the model specification.</p>
+					
+					<p> What can be static options:
+					Either any primitive value (attributes) or actuators, actuator groups, actuator states, or activations (flow control capability).</p>
+					
+					<p> Other decision capabilities can also be referred as static options. In that case, the output of the decision
+					capability is considered as a decision option.</p>
+					
+					<p> If the set of static options is homogeneous (i.e., has many actuator states (flow control capability),
+					or has many INTEGER primitives, or has many decision capabilities), each particular element/value is
+					considered as a decision option.</p>	  
+					
+					<p> In turn, if the set of static options is heterogeneous (i.e., has actuators and actuator states 
+					(flow control capability), or has INTEGER and STRING primitives, or primitive values and a decision capability),
+					the cartesian product between the heterogeneous elements/values is considered as decision options.</p>
+					
+					<p> Dynamic decision options exist only during the execution of the simulation. We assume that these dynamic
+					values are stored in an agent attribute (i.e., a perception attribute, which is updated at each timestep with
+					the entities the perceived by the agent).</p>
+					
+					<p> By definition, the set of dynamic options is always homogeneous. Therefore, previous notes on heterogeneous
+					options are not applied for dynamic options.</p>
+					
+					<p> The type of the attribute whose update source is a decision capability must be consistent with
+					the decision options of the capability (either static or dynamic).</p>
+					
+					<p> Connections (arrows) are used to represent which elements of the model are decision options of a decision
+					capability.</p>
+					
+					<p> Three types of decision capabilities are supported: state machines, learning, and adaptation. They are described
+					in the following sections.</p>
+			
+					<h4 id="state">State machine</h4>	  
+						  
+					<p> A state machine capability represents a fixed decision policy. </p>
+					
+					<p> A state machine is represented by a box with the following two sections:</p>
+					<p> i) the state machine identification: any valid string (spaces are allowed).</p>
+					<p> ii) its transitions(each transition has a option, condition and a target state).</p>  
+					<p> The decision options list is only visible in the properties view. </p>
+			
+					<p> <a href="#decisions-state-machine-basic">Fig. 13.</a> shows the box that represents the state machine on the diagram along 
+					with the properties view to edit the state machine id.</p>
+					
+					<figure id="decisions-state-machine-basic"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_state_machine_basic.png" alt="State machine basic.">
+						<figcaption class="figure-caption text-center">Fig. 13. State machine basic.</figcaption>
+				  	</figure>
+						  		
+					<p> A state machine is composed of states and transitions.</p>	  
+					
+					<p> Each state represents a decision option.</p>
+					
+					<p> The selected option of a state machine is its current state.</p>
+					
+					<p> <a href="#decisions-state-machine-options">Fig. 14.</a> shows the properties view to edit the state machine decision options list.</p>
+						  		
+					<figure id="decisions-state-machine-options"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_state_machine_options.png" alt="State machine options.">
+						<figcaption class="figure-caption text-center">Fig. 14. State machine options.</figcaption>
+				  	</figure>
+				  	
+					<p> A state transition is described by a transition expression (that specifies the condition that triggers the transition)
+					and a target state.</p>	  
+					
+					<p> The transition condition can be:</p>
+					<p> i) a temporal value: the transition is triggered when the temporal value is reached.</p>
+					<p> ii) a boolean expression: the transition is triggered when the expression is evaluated to true.</p>
+				  	
+				  	<p> <a href="#decisions-state-machine-transitions">Fig. 15.</a> shows the properties view to edit the state machine transitions.</p>
+				    
+					<figure id="decisions-state-machine-transitions"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_state_machine_transitions.png" alt="State machine transitions.">
+						<figcaption class="figure-caption text-center">Fig. 15. State machine transitions.</figcaption>
+				  	</figure>
+				  	
+				  	<h4 id="learning">Learning</h4>
+				  	
+				  	<p> A learning capability abstracts a learning technique so as to allow an agent to learn a decision policy.</p>
+				  	
+					<p> A learning capability is represented by a box with the following five sections:</p>
+					<p> i) the learning capability identification: any valid string (spaces are allowed).</p>
+					<p> ii) its decision options.</p>  
+					<p> iii) its states(state definition).</p>  
+					<p> iv) the reward definition.</p>  
+					<p> v) the learning technique and its learning parameters.</p>  
+					
+			
+					<p> <a href="#decisions-state-machine-basic">Fig. 16.</a> shows the box that represents the learning capability on the diagram along 
+					with the properties view to edit the learning capability id.</p>
+					
+					<figure id="decisions-learning-basic"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_basic.png" alt="Learning basic.">
+						<figcaption class="figure-caption text-center">Fig. 16. Learning basic.</figcaption>
+				  	</figure>
+				  	
+				  	<p> The actions of a reinforcement learning are the decision options provided as input for the capability.
+					The selected action is available as the decision output.</p>	  	
+				  	
+				  	<p> <a href="#decisions-learning-options">Fig. 17.</a> shows the properties view to edit the learning capability decision options list.</p>
+						  		
+					<figure id="decisions-learning-options"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_options.png" alt="Learning options.">
+						<figcaption class="figure-caption text-center">Fig. 17. Learning options.</figcaption>
+				  	</figure>
+				  	
+				  	<p> States of a reinforcement learning capability are a tuple that describes all the parts that compose a state as expressions. 
+				  	The concrete states are created during the simulation, from the combination of expression values.</p>
+				  	
+				  	<p> <a href="#decisions-learning-state-def">Fig. 18.</a> shows the properties view to edit the learning capability states.</p>
+						  			  	  
+					<figure id="decisions-learning-state-def"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_state_def.png" alt="Learning state def.">
+						<figcaption class="figure-caption text-center">Fig. 18. Learning state def.</figcaption>
+				  	</figure>
+				  	
+				  	<p> The reward of a reinforcement learning capability is specified as an expression, which can consider any model
+					element.</p>
+					
+				  	<p> <a href="#decisions-learning-reward">Fig. 19.</a> shows the properties view to edit the learning capability reward.</p>
+						  		
+					<figure id="decisions-learning-reward"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_reward.png" alt="Learning reward.">
+						<figcaption class="figure-caption text-center">Fig. 19. Learning reward.</figcaption>
+				  	</figure>
+				  	
+				  	<p> A learning technique usually has learning parameters, which guide the learning process. These parameters
+					are represented as attributes of the learning technique, to which sources can be associated in order to provide
+					parameter values,
+					as shown on <a href="#decisions-learning-parameters1">Fig. 20</a>.</p>
+					
+					<figure id="decisions-learning-parameters1"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_parameters1.png" alt="Learning parameters.">
+						<figcaption class="figure-caption text-center">Fig. 20. Learning parameters.</figcaption>
+				  	</figure>
+					
+				  	<p> The technique is of the type reinforcement learning, with which agents learn through experience. As agents
+					act on the environment, they receive a reward signal based on the outcomes of previous states and actions.
+					The reinforcement learning capability provided in our model is the Q-Learning technique. </p>
+				  		  	
+				  	<p> <a href="#decisions-learning-parameters2">Fig. 21</a> and 
+				  	<a href="#decisions-learning-parameters3">Fig. 22</a> show how to edit the learning parameters 
+				  	on the properties view.</p>	  	
+						  	  
+					<figure id="decisions-learning-parameters2"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_parameters2.png" alt="Q-Learning.">
+						<figcaption class="figure-caption text-center">Fig. 21. Q-Learning.</figcaption>
+				  	</figure>	  	
+						  			  
+					<figure id="decisions-learning-parameters3"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_learning_parameters3.png" alt="Epsilon Greedy.">
+						<figcaption class="figure-caption text-center">Fig. 22. Epsilon Greedy.</figcaption>
+				  	</figure>	
+						  
+					<h4 id="adaptation">Adaptation</h4>
+					
+					<p> An adaptation capability represents an adaptive decision policy.</p>
+							
+					<p> A adaptation is represented by a box with the following three sections:</p>
+					<p> i) the adaptation identification: any valid string (spaces are allowed).</p>
+					<p> ii) its decision options.</p>  
+					<p> iii) the criterion. </p>
+			
+					<p> <a href="#decisions-state-machine-basic">Fig. 23.</a> shows the box that represents the adaptation capability on the diagram along 
+					with the properties view to edit the adaptation id.</p>
+					
+					<figure id="decisions-adaptation-basic"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_adaptation_basic.png" alt="Adaptation basic.">
+						<figcaption class="figure-caption text-center">Fig. 23. Adaptation basic.</figcaption>
+				  	</figure>
+				  	
+				  	<p> As with any other decision capability, the adaptation capability can have static
+				  	(<a href="#decisions-adaptation-option-decisions">Fig. 24</a>) or 
+				  	dynamic(<a href="#decisions-adaptation-option-attributes">Fig. 25</a>) options, set by making relationships 
+				  	of the type Decision Option to other elements of the model, via the Decision Option row on the palette. </p>
+						  		
+					<figure id="decisions-adaptation-option-decisions"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_adaptation_options_decisions.png" alt="Adaptation options with other decision capabilities.">
+						<figcaption class="figure-caption text-center">Fig. 24. Adaptation options with other decision capabilities.</figcaption>
+				  	</figure>
+						  	  
+					<figure id="decisions-adaptation-option-attributes"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_adaptation_options_attributes.png" alt="Adaptation options with attributes.">
+						<figcaption class="figure-caption text-center">Fig. 25. Adaptation options with attributes.</figcaption>
+				  	</figure>	  	
+				  	
+					<p> The adaptive decision policy is represented by an adaptation criterion.</p>
+					
+					<p> The adaptation criterion is specified by an expression that describes which option should be selected among the
+					decision options available — the one that meets the criterion.</p>
+				  	
+				  	<p> <a href="#decisions-adaptation-criteria">Fig. 26.</a> shows the properties view to edit the adaptation criterion.</p>
+				      			  
+					<figure id="decisions-adaptation-criteria"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_adaptation_criteria.png" alt="Adaptation criteria.">
+						<figcaption class="figure-caption text-center">Fig. 26. Adaptation criteria.</figcaption>
+				  	</figure>	
+						  			  
+						  
+					<h4 id="flow-control">Flow Control</h4>	
+					
+					<p> A flow control capability represents the ability to regulate the flow of a set of streams using its actuators.</p>
+					
+					<p> <a href="#flow-control">Fig. 27</a> shows all the objects related to the flow control capability that can 
+					be managed on the ABStractme Tool.</p>
+					
+					<figure id="flow-control"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_flowcontrol.png" alt="Flow Control.">
+						<figcaption class="figure-caption text-center">Fig. 27. Flow Control.</figcaption>
+				  	</figure>
+					
+					<p> A flow control capability implies that the agent has a set of streams. These are represented as a streams
+					attribute in the agent. The number of streams is specified by the cardinality of this attribute.</p>
+					
+					<p> A flow control capability also implies that the agent has an additional attribute to specify the activation that is
+					selected at the current timestep. </p>
+			
+					<p>A flow control capability is represented as by the literal ’Flow Control’, which is shown in the capability
+					section of the agent box, as seen on <a href="#flow-control-basic">Fig. 28</a>, along with the
+					streams and activation attributes.</p>
+			
+					<figure id="flow-control-basic"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_flowcontrol_basic.png" alt="Agent box with Flow Control.">
+						<figcaption class="figure-caption text-center">Fig. 28. Agent box with Flow Control.</figcaption>
+				  	</figure>		
+			
+					<p> To regulate flow, it is assumed that the agent has a set of regulators and that these regulators can be in certain
+					states.</p>
+					
+					<p> Regulators can be seen as actuators of the agent, which are identified by a number. Such identifier relates the
+					actuator to the corresponding stream it is regulating (i.e., a regulator 0 is in charge of regulating the stream
+					0, and so on). Actuators can be grouped into actuator groups, on which all activate the
+					same state simultaneously. Consequently, a group is considered a single actuator because both are considered
+					actuatable devices. Actuatable devices are considered mutually exclusive: only one actuator or group can assume
+					a non-default state at a given moment; all others remain in the default state.</p>
+			
+					<p>For the actuators element, its bottom section shows the identifiers of the actuators. These identifiers are
+					generated automatically, according to the cardinality of the streams attribute. The user can not change
+					these identifiers. They are shown just to allow further connections from decision capabilities.</p>
+					
+					<p> Notice that:</p>
+					<p> i) The number of identifiers matches the cardinality of the streams attribute of the agent (described
+					previously).</p>
+					<p> ii) There is a correspondence between the identifiers and the stream it manages: the actuator 0 is in charge
+					of regulating the stream 0, and so on. </p>
+			
+					<p> For the actuator states element, its bottom
+					section presents all the specified actuator states, one per row. Each row shows the state name and a symbol
+					that indicates whether it is a default state. They can be edited on the properties view as shown on <a href="#flow-control-states">Fig. 29</a>.</p>
+			
+					<figure id="flow-control-states"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_flowcontrol_states.png" alt="Flow Control states.">
+						<figcaption class="figure-caption text-center">Fig. 29. Flow Control states.</figcaption>
+				  	</figure>
+			
+					<p> The actuator state that is automatically
+					activated when no other state is active is the default state.</p>
+			
+					<p> For the actuator groups element, its bottom section presents all the specified actuator groups, one per row.
+					Each row shows the group name and the identifiers of its related actuators, and can be
+					edited on the properties view, as shown on <a href="#flow-control-groups">Fig. 30</a>.</p>
+			
+					<figure id="flow-control-groups"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_flowcontrol_groups.png" alt="Flow Control groups.">
+						<figcaption class="figure-caption text-center">Fig. 30. Flow Control groups.</figcaption>
+				  	</figure>
+					  
+					<h4 id="diseases">Diseases</h4>
+					
+					<p> The disease capability gives the agent the ability to be affected by a disease. </p>
+					
+					<p> <a href="#diseases">Fig. 31</a> shows all the objects related to the disease capability that can 
+					be managed on the ABStractme Tool.</p>		
+					
+					<figure id="diseases"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_diseases.png" alt="Diseases.">
+						<figcaption class="figure-caption text-center">Fig. 31. Diseases.</figcaption>
+				  	</figure>
+				  	
+					<p> <a href="#disease-box">Fig. 32</a> shows the box that represents the disease capability 
+					on the diagram.</p>
+				  	
+					<figure id="disease-box"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_box.png" alt="Disease Box.">
+						<figcaption class="figure-caption text-center">Fig. 32. Disease Box.</figcaption>
+				  	</figure>
+			
+					<p> When first setting a disease, its identification and compartments must be specified
+					on the basic properties tab. </p>
+			
+					<p> <a href="#disease-transmission">Fig. 33</a> shows the box that represents the properties view to
+					edit the disease basic details.</p>
+				  	
+					<figure id="disease-basic"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_basic.png" alt="Disease basic.">
+						<figcaption class="figure-caption text-center">Fig. 33. Disease basic.</figcaption>
+				  	</figure>
+			
+					<p> The transmission tab on the properties view specifies a contamination interaction: </p>
+			
+					<p> Susceptible Agent: the agent that will be contaminated. </p>
+					<p> Infectious Element: agent or entity that transmits the disease.</p>
+					<p> Compartment: infectious compartment.</p>
+					<p> Transmission Type: can be by contact or proximity.</p>
+					<p> Transmission Probability: probability of transmission (between 0.0 and 1.0).</p>
+					<p> Contamination Condition: to use when there is a restriction in the contamination.</p>
+			
+					<p> <a href="#disease-transmission">Fig. 34</a> shows the box that represents the properties view to
+					edit the disease transmission.</p>
+				  	
+					<figure id="disease-transmission"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_transmission.png" alt="Disease transmission.">
+						<figcaption class="figure-caption text-center">Fig. 34. Disease transmission.</figcaption>
+				  	</figure>
+			
+					<p> The progression tab on the properties view specifies the duration of a compartment: </p>
+			
+					<p> Subject Agent: the agent subjected to the duration. </p>
+					<p> Subject Compartment: the compartment subjected to the duration.</p>
+					<p> Next Compartment: next compartment to transition to, after the duration.</p>
+					<p> Duration Type: the type of duration, can be:</p>
+					
+					<p> i) Deterministic: when the duration is a fixed value.</p>
+					<p> ii) Probabilistic: probability of recovery.</p>
+					<p> iii) Conditional: duration end on a certain condition.</p>
+					<p> iv) Custom: combination of the above.</p>
+			
+					<p> <a href="#disease-progression">Fig. 35</a> shows the box that represents the properties view to
+					edit the disease progression.</p>
+			
+					<figure id="disease-progression"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_progression.png" alt="Disease progression.">
+						<figcaption class="figure-caption text-center">Fig. 35. Disease progression.</figcaption>
+				  	</figure>
+					
+					<p> The mortality tab on the properties view specifies a death rate for the infected agents: </p>
+			
+					<p> Subject Agent: the agent that will be subject to the death rate. </p>
+					<p> Subject Compartment: compartment where the death rate occurs.</p>
+					<p> Death rate: the death rate(between 0.0 and 1.0).</p>
+					<p> Mortality Type: when the death happens:</p>
+					
+					<p> i) AT_EVERY_TIMEUNIT: anytime while the agent is contaminated.</p>
+					<p> ii) AT_SPECIFIC_TIMEUNIT: X timesteps after infection.</p>
+					<p> iii) WHEN_LEAVING_COMPARTMENT: when transitioning to another compartment.</p>
+					<p> iv) WHEN_CONDITION_HOLDS: when a certain condition is met.</p>
+					
+					<p> <a href="#disease-mortality">Fig. 36</a> shows the box that represents the properties view to
+					edit the disease mortality rate.</p>
+				  		  	
+					<figure id="disease-mortality"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_mortality.png" alt="Disease mortality.">
+						<figcaption class="figure-caption text-center">Fig. 36. Disease mortality.</figcaption>
+				  	</figure>
+					
+					<p> The introduction tab on the properties view specifies which, when and how many elements will be 
+					contaminated: </p>
+			
+					<p> Subject Agent: the agent that will be subjected to the introduction. </p>
+					<p> Periodicity: when the disease introduction will happen.</p>
+					<p> Quantity: how many agents will be infected.</p>
+					<p> Selection: which agents will be infected.</p>
+			
+					<p> <a href="#disease-introduction">Fig. 37</a> shows the box that represents the properties view to
+					edit the disease introduction.</p>
+				  		  	
+					<figure id="disease-introduction"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_introduction.png" alt="Disease introduction.">
+						<figcaption class="figure-caption text-center">Fig. 37. Disease introduction.</figcaption>
+				  	</figure>	  		  			
+					
+					<p> More than one agent can be subject to the same disease as shown on 
+					<a href="#disease-subject-to">Fig. 38</a>.</p>
+			
+					<figure id="disease-subject-to"> 
+						<img class="img-fluid mx-auto d-block" src="../../../figs/features_disease_subject_to.png" alt="Subject agent to disease.">
+						<figcaption class="figure-caption text-center">Fig. 38. Subject agent to disease.</figcaption>
+				  	</figure>
+	  			</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<section id="capabilities">
+	 <div class="container">
+	 
+	 	
+			    
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

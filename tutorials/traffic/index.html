@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+
+    <title>Creating the Traffic Signal Control simulation</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Creating the Traffic Signal Control simulation</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="traffic">
+	 <div class="container">
+	  <h4>Creating the Traffic Signal Control simulation</h4>
+	  
+	  <p> This tutorial will show how to create the Traffic Signal Control to help
+	  understand the ABStractme tool features.</p>
+	  
+	  <p> First create a new project and a new diagram, detailed instructions on the link: <a href="../../basic/index.html">Creating the first project</a>.</p>
+	  
+	  <p> Open the diagram created, click on the <a href="../features/concerns/index.html#overview">overview</a> box. At the properties view, select the "Spatial Abstraction" tab and change the "Ground Abstraction" combo box to "Graph".
+	  Mark the "Create from file?" field. A file to set the location of the graph nodes is needed. The file is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/1x3-oneway-network.osm">Download link</a></p>
+	  
+	  <p> After downloading the file click on the folder button, on the opened window change the file type to search to "OSM File" and select the downloaded file.</p>
+	  
+	  <p> The resulting properties view will look like <a href="#traffic-graph">Fig. 1</a>. </p>
+
+	  <figure id="traffic-graph">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_graph.png" alt="Overview properties.">
+		<figcaption class="figure-caption text-center">Fig. 1. Overview properties.</figcaption>
+	  </figure>
+
+
+	  <p> Now select the <a href="../features/concerns/index.html#concern">concern</a> line on the <a href="../features/concerns/index.html#palette">palette</a> and click on the overview rectangle.</p>	 
+	  
+	  <p> A concern will be added to the overview along with its corresponding tab.</p> 
+	  
+	  <p> Select the concern diamond, on the properties view, set the name to "Vehicles".</p>
+	  
+	  <p> The resulting overview will look like <a href="#traffic-vehicle-concern">Fig. 2</a>. </p>
+
+	  <figure id="traffic-vehicle-concern">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_vehicle_concern.png" alt="Overview with vehicle concern.">
+		<figcaption class="figure-caption text-center">Fig. 2. Overview with vehicle concern.</figcaption>
+	  </figure>	  
+	  
+	  <p> Click twice on the vehicle diamond. Select the concern tab that appeared, 
+	  a new window will appear with the concern diagram. </p>
+	  
+	  <p> Now add a vehicle agent to the concern, this time it will be an existing NetLogo agent.
+	  A file to set this agent is necessary. The file is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/Vehicle(NS).nls">Download link</a></p>
+	  
+	  <p> After downloading the file, select the agent to add, by clicking on the <a href="../features/other/index.html#external">External</a> > "Existing NetLogo Agent" line
+	  on the palette and clicking anywhere on the concern diagram. </p>
+	  
+	  <p> A window to select the downloaded file will appear. After selecting the file, 
+	  the resulting agent box will look like <a href="#traffic-vehicle">Fig. 3</a>. </p>
+	  
+	  <figure id="traffic-vehicle">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_vehicle.png" alt="The created agent.">
+		<figcaption class="figure-caption text-center">Fig. 3. The created agent.</figcaption>
+	  </figure>
+	  
+	  <p> Now add a graphic to monitor the number of
+	  vehicles that are not moving after every 45 time units, to see if there is a traffic jam.</p>	
+	  
+	  <p> To add the graphic, select one to add, by clicking on the <a href="../features/other/index.html#output">Output</a> > "Output Dataset" line 
+	  on the palette and clicking anywhere on the diagram.</p>
+	  
+	  <p> You can select the box created. On the properties view that appeared, focus on the left column.</p>	
+	  
+	  <p> You can choose a name to give to the graphic on the "Name" field, "vehicles" for example. Inside the output rectangle, 
+	  click on the "+" button.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the line to be added to the graphic.
+	  Let's call the line "stopped". </p>	
+	  
+	  <p> Also, choose the entity related to the defined line. On the "Entity" field select the agent 
+	  created previously. </p>	
+	  
+	  <p> On the "Criterion" field select "Eligible" and set the field to "speed = 0". </p>	
+	  
+	  <p> On the "Periodicity" field set the number of time units to 45.</p>	
+	  
+	  <p> Leave everything else unchanged. </p>	
+	   
+	  <p> Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> If you select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting "Output" properties will look like <a href="#traffic-output-vehicle">Fig. 4</a>.</p>
+
+	  <figure id="traffic-output-vehicle">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_output_vehicle.png" alt="The output properties.">
+		<figcaption class="figure-caption text-center">Fig. 4. The output properties.</figcaption>
+	  </figure>	  		 
+	  
+	  <p> <a href="#vehicle-complete">Fig. 5</a> shows what the entire vehicle diagram will look like after the changes made in this tutorial.</p>		 
+
+	  <figure id="vehicle-complete">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_vehicle_complete.png" alt="The vehicle diagram.">
+		<figcaption class="figure-caption text-center">Fig. 5. The vehicle diagram.</figcaption>
+	  </figure>		
+	  
+	  <p> Now go back to the overview window that is the tab at the left of the concern tab. 
+	  After returning to the overview window, close the vehicles concern tab.</p>	
+
+	  <p> Now select the <a href="../features/concerns/index.html#concern">concern</a> line on 
+	  the <a href="../features/concerns/index.html#palette">palette</a> and click on the overview rectangle.</p>	 
+	  
+	  <p> A concern will be added to the overview along with its corresponding tab.</p> 
+	  
+	  <p> Select the concern diamond, on the properties view, set the name to "Semaphore".</p>
+	  
+	  <p> The resulting overview will look like <a href="#traffic-semaphore-concern">Fig. 6</a>. </p>
+
+	  <figure id="traffic-semaphore-concern">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_semaphore_concern.png" alt="Overview with semaphore concern.">
+		<figcaption class="figure-caption text-center">Fig. 6. Overview with semaphore concern.</figcaption>
+	  </figure>	  
+	  
+	  <p> Click twice on the semaphore diamond. A new window will appear with the concern diagram. </p>
+	  
+	  <p> Now add an <a href="../features/entities/index.html#agent">agent</a> to the concern. Select an agent to add, by clicking on the agent line
+	  on the palette and clicking anywhere on the concern diagram. </p>
+	  
+	  <p> The agent box will appear on the diagram. Select the box. On the "Basic" properties view, you can name the agent, in our case, its name will 
+	  be "Semaphore". </p>
+	  
+	  <p> Change to the "<a href="../features/entities/index.html#creational">Creation Strategy</a>" tab, change the field "Strategy" to "Designer Defined", other fields will appear. </p>
+	  
+	  <p> On the line that starts with "Quantity", set the "Value" field to 3 so that three semaphores
+	  will be part of the simulation. </p>	
+	  
+	  <p> On the line that starts with "Location", set the "Expression" field to "GraphNode ( length (inlinks) > 1 )". </p>	      	 
+	  
+	  <p> The resulting agent and properties will look like <a href="#agent">Fig. 7</a>. </p>
+	  
+	  <figure id="agent">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_agent.png" alt="The created agent.">
+		<figcaption class="figure-caption text-center">Fig. 7. The created agent.</figcaption>
+	  </figure>
+	  
+	  <p> Now add the <a href="../features/capabilities/index.html#flow-control">flow control capability</a> to the agent to set up two plans for the semaphores. </p>	
+	  
+	  <p> Select the capability to add, by clicking on the Flow Control > "Flow Control Capability" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> Three new boxes will be added to the diagram, notice that they are connected to the agent. </p>	
+	  
+	  <p> The resulting agent box will look like <a href="#traffic-flowcontrol">Fig. 8</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol.png" alt="Agent with flow control.">
+		<figcaption class="figure-caption text-center">Fig. 8. Agent with flow control.</figcaption>
+	  </figure> 
+
+	  <p> The agent received two new attributes, let's focus on stream attribute for now. </p>	
+	  
+	  <p> Select the stream attribute, on the properties view that appeared, "Cardinality" field, set the value to 2. </p>	  
+	  
+	  <p> The resulting properties view will look like <a href="#traffic-flowcontrol-stream-cardinality">Fig. 9</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-stream-cardinality">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_stream_cardinality.png" alt="Streams attribute properties.">
+		<figcaption class="figure-caption text-center">Fig. 9. Streams attribute properties.</figcaption>
+	  </figure> 
+	  
+	  <p> Change to the "Initialization" tab. Change the "Source" field to "Expression".</p>
+	  
+	  <p> On the new line that appeared below, set the "Expression" field to "inlinks".</p>
+	  
+	  <p> The resulting properties view will look like <a href="#traffic-flowcontrol-streams-init">Fig. 10</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-streams-init">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_streams_init.png" alt="Streams attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 10. Streams attribute initialization.</figcaption>
+	  </figure> 
+	  
+	  <p> After the changes, the resulting agent box will look like <a href="#traffic-flowcontrol-streams-set">Fig. 11</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-streams-set">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_streams_set.png" alt="Agent with updated flow control.">
+		<figcaption class="figure-caption text-center">Fig. 11. Agent with updated flow control.</figcaption>
+	  </figure> 
+
+	  <p> Now add actuator states to the Actuator States box. </p>	
+	  
+	  <p> Select an actuator state to add, by clicking on the Flow Control > "Actuator State" line
+	  on the palette and clicking on the actuator states box. </p>	
+	  
+	  <p> A new line will be added to the box, select the line. </p>	
+	  
+	  <p> On the properties view that appeared, set the actuator state name to "red" and on the "Default?" field select "Y". </p>	
+	  
+	  <p> The resulting properties view will look like <a href="#traffic-flowcontrol-actuatorstate1">Fig. 12</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-actuatorstate1">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_actuatorstate1.png" alt="Red actuator state properties.">
+		<figcaption class="figure-caption text-center">Fig. 12. Red actuator state properties.</figcaption>
+	  </figure> 	  
+	  
+	  <p> Add another actuator state by repeating the steps above, this time the name will be "green" and the "Default?" field will be "N". </p>
+	  
+	  <p> The resulting properties view will look like <a href="#traffic-flowcontrol-actuatorstate2">Fig. 13</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-actuatorstate2">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_actuatorstate2.png" alt="Green actuator state properties.">
+		<figcaption class="figure-caption text-center">Fig. 13. Green actuator state properties.</figcaption>
+	  </figure> 	  
+	  	  
+	  <p> After the changes, the resulting agent box will look like <a href="#traffic-flowcontrol-actuatorstates-set">Fig. 14</a>.</p>		 
+	  
+	  <figure id="traffic-flowcontrol-actuatorstates-set">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_actuatorstates_set.png" alt="Agent with actuator states.">
+		<figcaption class="figure-caption text-center">Fig. 14. Agent with actuator states.</figcaption>
+	  </figure> 	  
+	  
+	  <p> Now add the <a href="../features/capabilities/index.html#state">state machine</a> to the agent. </p>	
+	  
+	  <p> Select a <a href="../features/capabilities/index.html#decisions">decision capability</a> to add, by clicking on the Decisions > "State Machine" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> A new box will be added to the diagram, notice that it is connected to the agent. </p>	
+	  
+	  <p> Select the created box. On the properties view that appeared, set the state machine name to "plan1". </p>	
+	  
+	  <p> The resulting box and properties view will look like <a href="#traffic-statemachine-basic">Fig. 15</a>.</p>		 
+	  
+	  <figure id="traffic-statemachine-basic">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_basic.png" alt="Basic state machine properties.">
+		<figcaption class="figure-caption text-center">Fig. 15. Basic state machine properties.</figcaption>
+	  </figure> 
+
+	  <p> Now connect the state machine to the flow control(actuators and actuator states). </p>	
+	  
+	  <p> Select a decision option to add, by clicking on the Decisions > "Decision Option" line
+	  on the palette and clicking on the state machine box first and then clicking on the actuator(s) box. </p>		  
+
+	  <p> Select another decision option to add, by clicking on the Decisions > "Decision Option" line
+	  on the palette and clicking on the state machine box first and then clicking on the actuator states box. </p>	
+
+	  <p> The resulting state machine box will look like <a href="#traffic-statemachine-decisionoption">Fig. 16</a>.</p>		 
+	  
+	  <figure id="traffic-statemachine-decisionoption">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_decisionoption.png" alt="State machine with decision options.">
+		<figcaption class="figure-caption text-center">Fig. 16. State machine with decision options.</figcaption>
+	  </figure> 
+
+	  <p> Click on the state machine box and change to the "Options" tab. 
+	  Click on the "+" button to add an option to the state machine.</p>
+	  
+	  <p> On the field "Option" select "(0,green)". </p>
+	  
+	  <p> The resulting "Options" tab will look like <a href="#traffic-statemachine-add-option">Fig. 17</a>.</p>	
+	   
+	  <figure id="traffic-statemachine-add-option">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_add_option.png" alt="Edition of the state machine options.">
+		<figcaption class="figure-caption text-center">Fig. 17. Edition of the state machine options.</figcaption>
+	  </figure>	  
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+	  
+	  <p> Click on the "+" button again.</p>
+	  
+	  <p> On the field "Option" select "(1,green)". </p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+
+	  <p> The resulting "Options" tab will look like <a href="#traffic-statemachine-options">Fig. 18</a>.</p>	
+	   
+	  <figure id="traffic-statemachine-options">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_options.png" alt="State machine options properties.">
+		<figcaption class="figure-caption text-center">Fig. 18. State machine options properties.</figcaption>
+	  </figure>
+	  	  
+	  <p> Change to the "Transitions" tab. 
+	  Click on the "+" button to add a transition to the state machine.</p>	   
+	  
+	  <p> On the field "Source State" select the "(0,green)" option. </p>
+	  <p> On the field "Target State" leave the field empty. </p>
+	  <p> On the field "Condition" set the value to 30. </p>
+	  
+	  <p> The resulting "Transitions" tab will look like <a href="#traffic-statemachine-add-transition">Fig. 19</a>.</p>	
+	   
+	  <figure id="traffic-statemachine-add-transition">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_add_transition.png" alt="Edition of the state machine transitions.">
+		<figcaption class="figure-caption text-center">Fig. 19. Edition of the state machine transitions.</figcaption>
+	  </figure>	  
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+	  
+	  <p> Click on the "+" button to add another transition to the state machine.</p>
+
+	  <p> On the field "Source State" select the "(1,green)" option. </p>
+	  <p> On the field "Target State" select the "(0,green)" option. </p>
+	  <p> On the field "Condition" set the value to 15. </p>
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	  	 
+
+	  <p> Select the first line created on the right column of the properties view(the one with the blank target state) and click on the 
+	  pencil button.</p>
+	  
+	  <p> On the field "Target State" select the "(1,green)" option. </p>	
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+	  
+	  <p> The resulting "Transitions" tab will look like <a href="#traffic-statemachine-transitions">Fig. 20</a>.</p>	
+	   
+	  <figure id="traffic-statemachine-transitions">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine_transitions.png" alt="State machine transitions properties.">
+		<figcaption class="figure-caption text-center">Fig. 20. State machine transitions properties.</figcaption>
+	  </figure>	 	   
+  	  
+	  <p> The resulting state machine box will look like <a href="#traffic-statemachine1">Fig. 21</a>.</p>	
+	   
+	  <figure id="traffic-statemachine1">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine1.png" alt="Plan 1 state machine.">
+		<figcaption class="figure-caption text-center">Fig. 21. Plan 1 state machine.</figcaption>
+	  </figure>	 	
+	  
+	  <p> Create another state machine by repeating the steps above, its name will be "plan2" and on the transitions properties tab, 
+	  the field "Condition" will be set in the opposite order, first 15 and then 30,
+	  as shown in <a href="#traffic-statemachine2">Fig. 22</a>.</p>	
+	   
+	  <figure id="traffic-statemachine2">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_statemachine2.png" alt="Plan 2 state machine.">
+		<figcaption class="figure-caption text-center">Fig. 22. Plan 2 state machine.</figcaption>
+	  </figure>	 	
+	  
+	  <p> Now add the <a href="../features/capabilities/index.html#learning">learning capability</a> to the agent. </p>	
+	  
+	  <p> Select a <a href="../features/capabilities/index.html#decisions">decision capability</a> to add, by clicking on the Decisions > "Learning" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> A new box will be added to the diagram, notice that it is connected to the agent. </p>	
+	  
+	  <p> The resulting agent box will look like <a href="#traffic-learning">Fig. 23</a>.</p>		 
+	  
+	  <figure id="traffic-learning">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning.png" alt="Agent with learning capability.">
+		<figcaption class="figure-caption text-center">Fig. 23. Agent with learning capability.</figcaption>
+	  </figure> 
+	  
+	  <p> Now connect the learning capability to the state machines created previously. </p>	
+	  
+	  <p> Select a decision option to add, by clicking on the Decisions > "Decision Option" line
+	  on the palette and clicking on the learning capability box first and then clicking on the "plan1" state machine box. </p>		  
+
+	  <p> Select another decision option to add, by clicking on the Decisions > "Decision Option" line
+	  on the palette and clicking on the learning capability box first and then clicking on the "plan2" state machine box. </p>	
+	  
+	  <p> The resulting learning capability box will look like <a href="#traffic-learning-decisionoption">Fig. 24</a>.</p>		 
+	  
+	  <figure id="traffic-learning-decisionoption">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning_decisionoption.png" alt="Learning capability with decision options.">
+		<figcaption class="figure-caption text-center">Fig. 24. Learning capability with decision options.</figcaption>
+	  </figure> 
+
+	  <p> Click on the learning capability box and change to the "StateDef" tab. </p>
+	 
+	  <p> Set the "State Def" field to "queueLength (streams[0])" in the first line and "queueLength (streams[1])"
+	  in the second line.</p>	
+	  
+	  <p> The resulting "StateDef" tab will look like <a href="#traffic-learning-statedef">Fig. 25</a>.</p>	
+	   
+	  <figure id="traffic-learning-statedef">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning_statedef.png" alt="Learning capability state definition properties.">
+		<figcaption class="figure-caption text-center">Fig. 25. Learning capability state definition properties.</figcaption>
+	  </figure>	 		  
+	    
+	  <p> Change to the "Reward" tab. </p>
+	 
+	  <p> Set the "Reward" field to "- ( queueLength ( streams[0] ) + queueLength ( streams[1] ) ) ".</p>	
+	  
+	  <p> The resulting "Reward" tab will look like <a href="#traffic-learning-reward">Fig. 26</a>.</p>	
+	   
+	  <figure id="traffic-learning-reward">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning_reward.png" alt="Learning capability reward properties.">
+		<figcaption class="figure-caption text-center">Fig. 26. Learning capability reward properties.</figcaption>
+	  </figure>	 	
+
+	  <p> Change to the "Parameters" tab. </p>
+ 
+	  <p> On the field "Technique" select "Q-Learning", other fields will appear: </p>
+	  <p> On the field "Learning Rate" select "Static Value" and set the value to 0.1. </p>
+	  <p> On the field "Discount Factor" select "Static Value" and set the value to 0.3. </p>
+	  
+	  <p> The resulting "Parameters" tab will look like <a href="#traffic-learning-parameters1">Fig. 27</a>.</p>	
+	   
+	  <figure id="traffic-learning-parameters1">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning_parameters1.png" alt="Learning capability parameters properties 1.">
+		<figcaption class="figure-caption text-center">Fig. 27. Learning capability parameters properties 1.</figcaption>
+	  </figure>	 		  
+	  
+	  <p> On the field "Selection Policy" select "Epsilon Greedy", other fields will appear: </p>
+	  <p> On the field "Epsilon" select "Static Value" and set the value to 0.7. </p>
+	  <p> On the field "Epsilon Decay" select "Static Value" and set the value to 0.99995. </p>
+
+	  <p> The resulting "Parameters" tab will look like <a href="#traffic-learning-parameters2">Fig. 28</a>.</p>	
+	   
+	  <figure id="traffic-learning-parameters2">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_learning_parameters2.png" alt="Learning capability parameters properties 2.">
+		<figcaption class="figure-caption text-center">Fig. 28. Learning capability parameters properties 2.</figcaption>
+	  </figure>	
+	  
+	  <p> Now select the activation attribute on the agent.</p>
+	  
+	  <p> On the properties view change to the "Update" tab.</p> 		 		  
+	  
+	  <p> On the "Source" field select "Decision-Making", on the line that appeared below,
+	  field "Decision Capability", select the learning capability created previously.</p> 
+	  
+	  <p> The resulting "Update" tab will look like <a href="#traffic-flowcontrol-activation-update">Fig. 29</a>.</p>	
+	   
+	  <figure id="traffic-flowcontrol-activation-update">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_flowcontrol_activation_update.png" alt="Activation attribute update properties.">
+		<figcaption class="figure-caption text-center">Fig. 29. Activation attribute update properties.</figcaption>
+	  </figure>	
+	  
+	  <p> Now select each state machine, "Transition" properties tab, and change the transitions that have (1,green) as source state.</p>
+	  
+	  <p> Select the corresponding line on the right column of the properties view(the one with the (1,green) as source state) and click on the 
+	  pencil button.</p>
+	  
+	  <p> On the field "Target State" select the "Terminal" option. </p>	
+	  
+	  <p> Click on the floppy disc button to save the changes.</p>	
+	  
+	  <p> <a href="#complete">Fig. 30</a> shows what the entire concern diagram will look like after the changes made in this tutorial.</p>		 
+	  	 
+	  <figure id="complete">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_semaphore_complete.png" alt="Overview of the simulation after the changes.">
+		<figcaption class="figure-caption text-center">Fig. 30. Overview of the simulation after the changes.</figcaption>
+	  </figure> 	  
+	  
+	  <p> Now export and run the simulation on NetLogo, detailed instructions on the link: <a href="../basic/index.html#exporting-netlogo">Exporting the Project to NetLogo</a>.</p>	
+	  
+	  <p> The simulation will look like <a href="#netlogo">Fig. 31</a>.</p>	
+	  	 
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../figs/traffic_netlogo.png" alt="The simulation running on netlogo.">
+		<figcaption class="figure-caption text-center">Fig. 31. The simulation running on NetLogo.</figcaption>
+	  </figure> 
+	  
+	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/traffic.zip">Download link</a></p>
+ 	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

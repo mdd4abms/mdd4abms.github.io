@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+
+    <title>Creating the Sugarscape simulation</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Creating the Sugarscape Simulation</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Sugarscape Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="installation">
+	 <div class="container">
+	  <h4>Adding reproduction and extra features to the agents</h4>
+	  	  
+	  <p> This tutorial will show you how to expand the sugarscape simulation created previously 
+	  to have agent reproduction and additional features.</p>
+	  
+	  <p> Start by modifying the field of vision attribute of the agent. </p>
+	  
+	  <p> On the properties view, change to the "Initialization" tab and modify the field "Expression" to
+	  "1 + random(6)". </p>
+	  
+	  <p> Now the field of vision value will vary between 1 and 6 for each agent.
+	  The resulting "Initialization" tab will look like <a href="#vision">Fig. 1</a>.</p>
+	  
+	  <figure id="vision">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_vision.png" alt="Modified vision attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 1. Modified vision attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> Now let's change the metabolism attribute of the agent. </p>
+	  
+	  <p> On the properties view, change to the "Initialization" tab and modify the field "Expression" to
+	  "1 + random(4)". </p>
+	  
+	  <p> Now the metabolism value will vary between 1 and 4 for each agent.
+	  The resulting "Initialization" tab will look like <a href="#metabolism">Fig. 2</a>.</p>
+	  
+	  <figure id="metabolism">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_metabolism.png" alt="Modified metabolism attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 2. Modified metabolism attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> Now let's change the sugar attribute of the supplementary structure to allow the sugar to 
+	  reappear on the map after a certain amount of time. </p>
+	  
+	  <p> On the properties view, on the "Basic" tab, modify the field "Type" to
+	  "DECIMAL". The resulting "Basic" tab will look like <a href="#sugar-1">Fig. 3</a>.</p>
+	  	 
+	  <figure id="sugar-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_sugar1.png" alt="Modifying the sugar attribute.">
+		<figcaption class="figure-caption text-center">Fig. 3. Modifying the sugar attribute.</figcaption>
+	  </figure>
+	 
+	  <p> Now change to the "Initialization" tab and modify the "Source" field to "File GIS".</p>
+	  
+	  <p> Load a file to define the cells on the map where the sugar will appear and
+	  the quantity of sugar available on each cell.</p>	
+	  
+	  <p> Click on the file button that appeared, a new window will pop up. 
+	  Select the file to use. In this case, select the "sugar-map.asc" file
+	  available to download on the following link. </p>
+	  
+	  <p><a href="../../../downloads/sugar-map.asc">Download link</a></p>
+	  
+	  <p> After choosing the file, the resulting 
+	  "Initialization" tab will look like <a href="#sugar-2">Fig. 4</a>.</p>	
+	   
+	  <figure id="sugar-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_sugar2.png" alt="Modifying the sugar attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 4. Modifying the sugar attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> Now add a supplementary attribute to make the sugar reappear on the map
+	  after being depleted. </p>
+	  
+	  <p> Select an attribute to add, by clicking on the Entities > "Attribute" 
+	  line on the palette and clicking on the supplementary structure box. </p>		
+	  
+	  <p> You can select the attribute created. On the "Basic" properties view that appeared, change the 
+	  attribute name to "max_sugar", and its type to "DECIMAL".</p>
+	   
+	  <p> The resulting attribute will look like <a href="#max-sugar-1">Fig. 5</a>.</p>	
+	  	 
+	  <figure id="max-sugar-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_max_sugar1.png" alt="The max sugar attribute.">
+		<figcaption class="figure-caption text-center">Fig. 5. The max sugar attribute.</figcaption>
+	  </figure>
+	  
+	  <p> Now change to the "Initialization" tab and modify the "Source" field to "File GIS".</p> 
+	  
+	  <p> Load a file to define the cells on the map where the sugar will reappear and
+	  the new quantity of sugar available on each cell.</p>	
+	  
+	  <p> Click on the file button that appeared, a new window will pop up. 
+	  Select the file to use. In this case, select the same "sugar-map.asc" file
+	  available to download on the following link. </p>
+	  
+	  <p><a href="../../../downloads/sugar-map.asc">Download link</a></p>
+	  	  
+	  <p> After choosing the file the resulting 
+	  "Initialization" tab will look like <a href="#max-sugar-2">Fig. 6</a>.</p>
+	  	 
+	  <figure id="max-sugar-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_max_sugar2.png" alt="Max sugar attribute initialization.">
+		<figcaption class="figure-caption text-center">Fig. 6. Max sugar attribute initialization.</figcaption>
+	  </figure>
+	  
+	  <p> Select the sugar attribute again and change to the "Update" tab.</p>	
+	  
+	  <p> On the field "Source" select "Expression". Set the field "Expression" that appeared to 
+	  "min (max_sugar,(sugar + 0.2))". </p>	
+	  
+	  <p> Now the sugar values on the map will update 
+	  on each step of the simulation. The resulting "Update" tab will look like <a href="#sugar-3">Fig. 7</a>.</p>	
+	  	 
+	  <figure id="sugar-3">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_sugar3.png" alt="Sugar attribute update">
+		<figcaption class="figure-caption text-center">Fig. 7. Sugar attribute update.</figcaption>
+	  </figure> 
+	  
+	  <p> Now create a new type of movement for the agents. They will move to the nearest
+	  cell with sugar instead of moving to any random cell on the map like before.</p>
+
+	  <p> First, remove the previous random walk mobility. </p>	
+	  
+	  <p> Move the mouse pointer to the
+	  mobility box and select the trash can icon that appeared. </p>	
+	  
+	  <p> Confirm to delete the box from the diagram.</p>	
+	  
+	  <p> Select the new mobility to add, by clicking on the Mobility > "Closest Best Spatial Unit" line
+	  on the palette and clicking on the agent box. </p>	
+	  
+	  <p> A new box will be added to the diagram connected to the agent. </p>	
+	  
+	  <p> Like before the agents must be able to move to the limits of their field of vision on each step of the simulation.</p>	
+	  
+	  <p> To do this, on the properties view that appeared, tab "Basic", "Range" rectangle, check the "Limited" dot and on the "Upper" 
+	  field select the "vision" attribute. </p>	
+	  
+	  <p> The resulting "Basic" properties view will look like <a href="#closest-best-1">Fig. 8</a>.</p>	 
+	  	 
+	  <figure id="closest-best-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_closestBest1.png" alt="Creating a new type of movement for the agents.">
+		<figcaption class="figure-caption text-center">Fig. 8. Creating a new type of movement for the agents.</figcaption>
+	  </figure> 
+	  
+	  <p> Now change to the "Objective Function" tab and set the "Objective" field to "MAXIMIZE".</p>	
+	  
+	  <p> The agents will prioritize moving to the cell on their field of vision that has the 
+	  highest amount of sugar. </p>	
+	  
+	  <p> On the same tab, on the "Spatial Unit Attribute" field, select the "sugar" attribute modified previously.</p>	
+	  
+	  <p> The resulting "Objective Function" properties view will look like <a href="#closest-best-2">Fig. 9</a>.</p>	
+	  
+	  <figure id="closest-best-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_closestBest2.png" alt="Changing agent behavior to move towards sugar cells.">
+		<figcaption class="figure-caption text-center">Fig. 9. Changing agent behavior to move towards sugar cells.</figcaption>
+	  </figure> 
+
+	  <p> Now add a graphic to monitor the average field of vision and metabolism of the 
+	  agents at each step of the simulation.</p>	
+	  
+	  <p> To add the graphic, select one to add, by clicking on the Output > "Output Dataset" line 
+	  on the palette and clicking anywhere on the diagram.</p>
+	  
+	  <p> You can select the box created. On the properties view that appeared, focus on the left column.</p>	
+	  
+	  <p> You can choose a name to give to the graphic on the "Name" field. Inside the output rectangle, 
+	  click on the "+" button.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the line to be added to the graphic.
+	  Let's call the first line "Metabolism". </p>	
+	  
+	  <p> Also, choose the entity related to the defined line. On the "Entity" field select the agent 
+	  created previously. </p>	
+	  
+	  <p> Also, on the bottom of the column, check the "Average of Attribute" dot.
+	  Choose the "sugarMetabolism" attribute on the combo box.</p>	
+	   
+	  <p> Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> If you select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting left column will look like <a href="#met-vision-1">Fig. 10</a>.</p>
+	  		 
+	  <figure id="met-vision-1">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_metVision1.png" alt="Adding a graphic to monitor agent metabolism X vision.">
+		<figcaption class="figure-caption text-center">Fig. 10. Adding a graphic to monitor agent metabolism X vision.</figcaption>
+	  </figure> 
+ 	  
+	  <p> On the left column, click on the "+" button again.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the next line to be added to the 
+	  graphic. Let's call the second line "Vision". </p>	
+	  
+	  <p> Also, choose the entity related to the defined line. On the "Entity" field 
+	  select the agent created previously. </p>	
+	  
+	  <p> Also, on the bottom of the column, check the "Average of Attribute" dot.
+	  Choose the "vision" attribute on the combo box.</p>	
+	  
+	  <p> Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> If you select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting left column will look like <a href="#met-vision-2">Fig. 11</a>.</p>	 
+	  
+	  <figure id="met-vision-2">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_metVision2.png" alt="Adding a graphic to monitor agent metabolism X vision.">
+		<figcaption class="figure-caption text-center">Fig. 11. Adding a graphic to monitor agent metabolism X vision.</figcaption>
+	  </figure> 
+
+	  <p> Now add a histogram to monitor the metabolism of the agents at each step of the 
+	  simulation.</p>	
+	  
+	  <p> To add the histogram, select one to add, by clicking on the Output > "Output Dataset" line 
+	  on the palette and clicking anywhere on the diagram.</p>
+	  
+	  <p> You can select the box created. On the properties view that appeared, focus on the left column. 
+	  You can choose a name to give to the histogram on the "Name" field. Inside the output rectangle, 
+	  click on the "+" button.</p> 
+	 
+	  <p> On the "Name" field, choose a name to identify the attribute to be monitored.</p>
+	  
+	  <p> Also, choose the entity related to the histogram. On the "Entity" field select the agent 
+	  created previously. </p>	
+	  
+	  <p> On the "Output Type" field choose "Histogram". 
+	  On the "Attribute" field choose the "sugarMetabolism" attribute. </p> 
+	  
+	  <p> Set the "Bins" field to 4 and the "Range" field lower bound to 1 and upper bound to 5. </p>
+	  
+	  <p> Click on the floppy disc button to save the changes. </p>	
+	  
+	  <p> If you select the line created on the right column of the properties view and click on the 
+	  pencil button, the resulting left column will look like <a href="#histogram">Fig. 12</a>.</p> 
+	  
+	  <figure id="histogram">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_histogram.png" alt="Adding a histogram to monitor agent metabolism.">
+		<figcaption class="figure-caption text-center">Fig. 12. Adding a histogram to monitor agent metabolism.</figcaption>
+	  </figure> 
+	  
+	  <p> Add a final external capability, this time to allow the agents to reproduce.</p>
+	  
+	  <p> To add the external NetLogo capability, select one to add, 
+	  by clicking on the External > "Existing NetLogo Capability" line on the palette and clicking 
+	  on the agent box.</p>
+	  
+	  <p> A new window will pop up. Select the file with the NetLogo code corresponding to
+	  the capability to use. In this case, select the "reproduction-mdd4abms.nls" file
+	  available to download on the following link.</p>
+	  
+	  <p><a href="../../../downloads/reproduction-mdd4abms.nls">Download link</a></p>
+	  
+	  <p> <a href="#complete">Fig. 13</a> shows what the entire concern diagram will look like after the changes made in this tutorial.</p>		 
+	  	 
+	  <figure id="complete">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_complete.png" alt="Overview of the simulation after the changes.">
+		<figcaption class="figure-caption text-center">Fig. 13. Overview of the simulation after the changes.</figcaption>
+	  </figure> 
+
+	  <p> Now export and run the simulation on NetLogo, detailed instructions on the link: <a href="../../basic/index.html#exporting-netlogo">Exporting the Project to NetLogo</a>.
+	  The simulation will look like <a href="#netlogo">Fig. 14</a>.</p>
+	   
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../../figs/sugarscape_reproduction_netlogo.png" alt="The simulation running on NetLogo.">
+		<figcaption class="figure-caption text-center">Fig. 14. The simulation running on NetLogo.</figcaption>
+	  </figure> 
+	  
+	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../../downloads/sugarscape.zip">Download link</a></p>
+	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120620574-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-120620574-1');
+	</script>
+	  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link href="css/customization.css" rel="stylesheet">
+	
+    <title>MDD4ABMS: Model-driven Agent-based Simulation Development</title>
+  </head>
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">How to create a simulation project</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="../index.html">(back to Tutorials)<span class="sr-only">(current)</span></a>
+				</li>
+			  </ul>
+			</div>
+	    </nav>
+    </header>
+
+	
+	<section id="basic">
+	 <div class="container">
+	  <h1>Creating the first project</h1>
+	  
+	  <p> This tutorial shows how to create a basic project to help you to understand 
+	  the ABStractme Tool features. It also demonstrates how to generate source code for the <a href="https://ccl.northwestern.edu/netlogo/">NetLogo</a> simulation platform.</p>
+	  
+	  <p> The first step is to create a new project. In Eclipse, go to File > New > Other.
+	  Select "ABStractme > ABStractme Project" as shown in <a href="#new-project">Fig. 1</a>. 
+	  Click on the "Next" button.</p>
+	  
+	  <figure id="new-project"> 
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_newProject.png" alt="New Project.">
+		<figcaption class="figure-caption text-center">Fig. 1. New Project Wizard.</figcaption>
+	  </figure>
+	  
+	  <p> In the next window, shown on <a href="#naming-new-project">Fig. 2</a>, specify a name for your new project and then click on the "Finish" button.</p>	  
+	  
+	  <figure id="naming-new-project"> 
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_myFirstProject.png" alt="Naming the new project.">
+		<figcaption class="figure-caption text-center">Fig. 2. Specify a name for your project.</figcaption>
+	  </figure>
+
+	  <p> Now you must create a diagram to model the simulation. Go to File > New > Other.
+	  Select "ABStractme > ABStractme Diagram" as shown in <a href="#new-diagram">Fig. 3</a>. Click on the "Next" button.</p>
+	  
+	  <figure id="new-diagram"> 
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_newDiagram.png" alt="New Diagram.">
+		<figcaption class="figure-caption text-center">Fig. 3. New Diagram Wizard.</figcaption>
+	  </figure>
+
+	  <p> In the next window, shown in <a href="#naming-new-diagram">Fig. 4</a>, select the project created previously and specify a name for your new 
+	  diagram. Click on the "Finish" button.</p>
+	  
+	  <figure id="naming-new-diagram"> 
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_myFirstDiagram.png" alt="Naming the new diagram.">
+		<figcaption class="figure-caption text-center">Fig. 4. Specify a name for the new diagram.</figcaption>
+	  </figure>	 
+
+	  <p> <a href="#project-explorer">Fig. 5</a> shows the project structure after the diagram creation.</p>
+	  
+	  <figure id="project-explorer">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_projectExplorer.png" alt="Resulting project explorer.">
+		<figcaption class="figure-caption text-center">Fig. 5. Project explorer.</figcaption>
+	  </figure>
+
+	  <p> A simulation model is composed of an <em>Overview</em> diagram, which is shown at the center of the ABStractme modeling tool. 
+	  <a href="#overview">Fig. 6</a> shows the overview diagram. A palette of components is show at the right side, with the available modeling constructs.</p>
+	  
+	  <figure id="overview">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_overview.png" alt="Overview of the ABStractme Tool.">
+		<figcaption class="figure-caption text-center">Fig. 6. Overview diagram in the ABStractme Tool.</figcaption>
+	  </figure>	  
+
+	  <p> When you select the main rectangle, a <em>Properties View</em> (<a href="#model-name">Fig. 7</a>) shows the model details. Using this property view, you can edit the model name and description.</p>
+	  
+	  <figure id="model-name">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_modelName.png" alt="Naming the model.">
+		<figcaption class="figure-caption text-center">Fig. 7. Naming the model.</figcaption>
+	  </figure>
+
+	  <p> Next, we will show you how to specify a Grid environment with fixed size</p>
+	  <p> 
+	  In the <em>Properties View</em>, open the <em>Spatial Abstraction</em> tab and change the fields "Max Col"
+	  and "Max Row" to 49. </p>
+	  
+	  <p> The numbers on the diamond located on the main rectangle of the overview diagram are changed to 50 x 50, as shown in <a href="#grid">Fig. 8</a></p>
+	  
+	  <figure id="grid">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_grid.png" alt="Editing the grid.">
+		<figcaption class="figure-caption text-center">Fig. 8. Editing the grid.</figcaption>
+	  </figure>	 
+
+	  <p> Now select the <em>Concern</em> element from the palette (as shown in <a href="#palette-concerns">Fig. 9</a>) and click on the main rectangle of the overview diagram.</p>
+	  
+	  <figure id="palette-concerns">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_paletteConcerns.png" alt="Selecting a concern.">
+		<figcaption class="figure-caption text-center">Fig. 9. Specifying a concern.</figcaption>
+	  </figure>	 
+
+	  <p> A concern will be added to the overview diagram.</p>
+	   
+	  <p> Select the concern diamond on the main rectangle. On the properties view (<a href="#concern">Fig. 10</a>) specify a
+	  name for the concern. You can also specify a description for the concern.</p>
+	  
+	  <figure id="concern">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_concern.png" alt="Naming the concern.">
+		<figcaption class="figure-caption text-center">Fig. 10. Specifying the concern name.</figcaption>
+	  </figure>	 
+
+	  <p> Open the <em>Concern</em> tab that appeared after the creation of the concern. A new window will
+	  appear with the concern diagram, as shown in <a href="#concern-window">Fig. 11</a>.</p>
+
+	  <figure id="concern-window">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_concernWindow.png" alt="View of the concern diagram">
+		<figcaption class="figure-caption text-center">Fig. 11. View of the concern diagram.</figcaption>
+	  </figure>	 
+
+	  <p> Now you can add entities to the concern, as well as agents and simulation parameters. Select an agent to add, by clicking on the <em>Agent</em> element
+	  on the palette, as shown in <a href="#palette-entities">Fig. 12</a>, and clicking anywhere on the concern diagram.</p>
+	  
+	  <figure id="palette-entities">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_paletteEntities.png" alt="Adding an agent">
+		<figcaption class="figure-caption text-center">Fig. 12. Adding an agent.</figcaption>
+	  </figure>	 	  
+
+	  <p> The agent box will appear on the diagram. Select the box. By using the <em>Properties View</em> set a name to the agent, as shown in <a href="#agent-name">Fig. 13</a>.</p>
+	  
+	  <figure id="agent-name">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_agentName.png" alt="Set the agent name">
+		<figcaption class="figure-caption text-center">Fig. 13. Set the agent name.</figcaption>
+	  </figure>	 
+
+	  <p> On the properties view, change to the <em>Creation Strategy</em> tab as shown 
+	  in <a href="#agent-strategy">Fig. 14</a>.</p>
+	  
+	  <figure id="agent-strategy">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_agentStrategy.png" alt="View of the default agent strategy">
+		<figcaption class="figure-caption text-center">Fig. 14. View of the default agent strategy.</figcaption>
+	  </figure>	 	  
+
+	  <p> Change the field <em>Strategy</em> to <em>Designer Defined</em>. Other fields should look like <a href="#agent-strategy-designer">Fig. 15</a>. </p>
+	  
+	  <p> In the <em>Quantity</em> property, set the <em>Value</em> field to 200 so that two hundred agents will be created when the simulation is ran. </p>
+	  
+	  <figure id="agent-strategy-designer">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_agentStrategyDesigner.png" alt="Selecting the Designer Defined strategy">
+		<figcaption class="figure-caption text-center">Fig. 15. Selecting the Designer Defined strategy.</figcaption>
+	  </figure>
+
+	  <p> Save the diagrams. Now you can generate NetLogo source code from the simulation model.</p>
+	  
+	  <h4 id="exporting-netlogo">Generating NetLogo Source Code</h4>
+	  
+	  
+	  <p> Right click on the diagram and select <em>Generate NetLogo Code</em>, as shown in
+	  <a href="#export-netlogo">Fig. 16</a>. </p>
+	  
+	  <figure id="export-netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_exportNetlogo.png" alt="Generating NetLogo source code.">
+		<figcaption class="figure-caption text-center">Fig. 16. Generating NetLogo source code.</figcaption>
+	  </figure>	 	  
+	  
+	  <p> After a while, a message window will appear showing that the source code was successfully generated. </p>
+	  
+	  <p> Right click on the project folder within the <em>Package Explorer</em> and select <em>Refresh</em>.</p>
+	  
+	  <p> <a href="#netlogo-files">Fig. 17</a> shows the generated NetLogo source files.
+	  </p>
+	  
+	  <figure id="netlogo-files">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_netlogoFiles.png" alt="The exported NetLogo code">
+		<figcaption class="figure-caption text-center">Fig. 17. The generated NetLogo code.</figcaption>
+	  </figure>	 	  	 
+
+	  <p> Before running the simulation, you must configure NetLogo following the steps available at this link: <a href="../netlogo/index.html">NetLogo configuration required to run the generated simulations</a>. </p>
+	  
+	  <p> Open NetLogo and select File > Open. Select the file that ends 
+	  with .nlogo. With the simulation opened, click on the "Setup" button and the simulation will appear on NetLogo 
+	  as shown in <a href="#netlogo">Fig. 18</a>. </p>
+	  
+	  <p> The different colored dots are the two hundred agent units 
+	  that were set up previously. </p>
+	  
+	  <figure id="netlogo">
+		<img class="img-fluid mx-auto d-block" src="../../figs/basic_netlogo.png" alt="View of the simulation on NetLogo">
+		<figcaption class="figure-caption text-center">Fig. 18. View of the simulation on NetLogo.</figcaption>
+	  </figure>	 	  	 	  
+	  
+	  <p> The complete project created on this tutorial is available to download on the link below. </p>	  
+	  
+	  <p><a href="../../downloads/MyFirstProject.zip">Download link</a></p>
+	  
+	  <hr>
+	 </div>
+	</section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>
